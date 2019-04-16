@@ -14,7 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/targets', 'TargetsController@index');
-
-Route::get('/targets/create', 'TargetsController@create');
-Route::post('/targets', 'TargetsController@store');
+Route::resource('targets', 'TargetsController');
