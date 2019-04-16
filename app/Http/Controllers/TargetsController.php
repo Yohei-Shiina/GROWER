@@ -12,4 +12,17 @@ class TargetsController extends Controller
         $targets = Target::all();
         return view('targets.index')->with('targets', $targets);
     }
+    
+    public function create()
+    {
+        return view('targets.create');
+    }
+
+    public function store(Request $request)
+    {
+        Target::create([
+            'goal' => $request->goal
+        ]);
+        return view('targets.store');
+    }
 }
