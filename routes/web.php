@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('targets', 'TargetsController');
+Route::get('targets/{id}/delete', 'TargetsController@destroy');

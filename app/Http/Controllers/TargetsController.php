@@ -25,4 +25,33 @@ class TargetsController extends Controller
         ]);
         return view('targets.store');
     }
+
+    public function show($id)
+    {
+        
+        $target = Target::find($id);
+        return view('targets.show')->with('target', $target);
+    }
+
+    public function edit($id)
+    {   
+        $target = Target::find($id);
+        return view('targets.edit')->with('target', $target);
+    }
+
+    public function update(Request $request, $id)
+    {   
+        Target::find($id)->update([
+            'goal' => $request->goal
+        ]);
+        return view('targets.update');
+    }
+
+    public function destroy($id)
+    {
+        $target = Target::find($id);      
+        $target->delete();
+
+        return view('targets.destroy');
+    }
 }
