@@ -5,21 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
 
-
-
 class Target extends Model
 {
 
-    protected $fillable = ['goal'];
+    protected $fillable = ['goal', 'date', 'time'];
 
     public function due()
     {
-        $datetime = new DateTime('2019/4/17 13:37:00');
+        $datetime = new DateTime($this->date);
         $current = new DateTime();
         
         $due = $current->diff($datetime);
         return $due;
     }
 }
-
-
