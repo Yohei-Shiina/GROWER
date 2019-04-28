@@ -14,4 +14,8 @@ class TasksController extends Controller
             ]);
         return redirect("targets/{$task->target->id}");
     }
+    public function destroy($target_id, $task_id) {
+        Task::destroy($task_id);
+        return redirect("targets/{$target_id}");
+      }
 }

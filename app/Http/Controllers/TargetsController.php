@@ -38,7 +38,6 @@ class TargetsController extends Controller
 
     public function show($id)
     {
-        
         $target = Target::with('tasks')->find($id);
         $tasks = $target->tasks()->get();
         return view('targets.show')->with(array('target'=> $target, 'tasks' => $tasks));
