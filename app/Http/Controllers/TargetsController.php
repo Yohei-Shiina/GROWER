@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Target;
-use DateTime;
+use App\Task;
 class TargetsController extends Controller
 {
     
@@ -19,15 +19,19 @@ class TargetsController extends Controller
     
     public function create()
     {
-        return view('targets.create');
+        $target = new Target();
+        $task = new Task();
+        return view('targets.create', ['target' => $target, 'task' => $task,]);
     }
 
     public function store(Request $request)
     {
+        
         Target::create([
             'goal' => $request->goal,
             'date' => $request->date,
             'time' => $request->time,
+            'user_id' => 1,
         ]);
         return view('targets.store');
     }
@@ -35,8 +39,9 @@ class TargetsController extends Controller
     public function show($id)
     {
         
-        $target = Target::find($id);
-        return view('targets.show')->with('target', $target);
+        $target = Target::with('tasks')->find($id);
+        $tasks = $target->tasks()->get();
+        return view('targets.show')->with(array('target'=> $target, 'tasks' => $tasks));
     }
 
     public function edit($id)

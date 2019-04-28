@@ -8,7 +8,12 @@ use DateTime;
 class Target extends Model
 {
 
-    protected $fillable = ['goal', 'date', 'time'];
+    protected $fillable = ['goal', 'date', 'time', 'user_id'];
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 
     public function due()
     {

@@ -11,8 +11,7 @@
   <div>期限</div> 
   {{ Form::date('date', new DateTime())}}
   {{ Form::input('time','time')}}
-  <div>タスク</div>
-  {{-- {{ Form::text('task', null, ["placeholder" => 'タスクを入力してください']) }} --}}
+ 
   <div>{{ Form::submit('依頼する') }}</div>
 
   {{ Form::close()}}
