@@ -2,8 +2,8 @@
 
 @section('content')
 
-  <div>クエストを依頼しました</div>
+  <div>目標を立てました</div>
 
-  <a href="/targets">クエストを確認する</a>
+  <a href="/targets">目標を確認する</a>
 
 @endsection
