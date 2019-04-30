@@ -15,6 +15,11 @@ class Target extends Model
         return $this->hasMany(Task::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function due()
     {
         $datetime = new DateTime($this->date);
