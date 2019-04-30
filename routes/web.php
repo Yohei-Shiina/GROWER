@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['middleware' => ['web']], function(){
+
+    Route::auth();
+
+    Route::get('/','TargetsController@index');
+
+    Route::resource('targets', 'TargetsController');
+    
+    Route::resource('targets.tasks', 'TasksController', ['only' => 'store']);
+    
+    Route::get('targets/{id}/delete', 'TargetsController@destroy');
+
+    Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@destroy');
 });
