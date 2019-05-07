@@ -1,0 +1,38 @@
+.wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  .sidebar{
+    background-color: #222222;
+    width: 180px;
+    text-align: center;
+    overflow: scroll;
+    ul{
+      padding-left: 0;
+      list-style: none;
+      a{
+        color: white;
+        position: relative;
+        top: 50px;
+      }
+      .tabs{
+        margin-top: 150px;
+        li{
+          margin-top: 20px;
+        }
+      }
+      .logout{
+        margin-top: 240px;
+      }
+    }
+  }
+  
+  .main{
+    background-color: rgb(245, 245, 245);
+    width: calc(100% - 180px);
+    padding: 20px 50px;
+    overflow: scroll;
+    
+  }
+}

@@ -1,0 +1,45 @@
+body {
+  box-sizing: border-box;
+  background-color: red;
+}
+body .wrap {
+  width: 100%;
+  margin: 0;
+}
+body .wrap .sidebar {
+  background-color: rgba(0, 0, 0, 0.849);
+  height: 100vh;
+  width: 180px;
+  border-right: 1px solid black;
+  padding-left: 0;
+}
+body .wrap .sidebar ul {
+  padding-left: 20px;
+  list-style: none;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+body .wrap .sidebar ul a {
+  color: white;
+}
+body .wrap .sidebar ul div {
+  position: relative;
+  top: 150px;
+}
+body .wrap .sidebar ul div li {
+  margin-top: 40px;
+}
+body .wrap .sidebar ul .title {
+  position: relative;
+  top: 50px;
+  margin-bottom: 50px;
+}
+body .wrap .sidebar ul .logout {
+  position: relative;
+  top: 350px;
+}
+body .main {
+  width: calc(100% - 180px);
+  background-color: #8f99a8;
+}
