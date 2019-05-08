@@ -1,0 +1,55 @@
+.user-show .page {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.user-show .block1 {
+  margin-bottom: 30px;
+}
+.user-show .block1 .user-photo {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+.user-show .block1 .user-photo img {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto 20px;
+}
+.user-show .block1 .user-photo .file {
+  margin-left: 50px;
+}
+.user-show .block1 .user-photo input {
+  display: block;
+  margin: 0 auto;
+}
+.user-show .block1 .user-photo .btn {
+  margin-top: 5px;
+}
+.user-show .block1 .user-description p {
+  min-width: 200px;
+  margin-bottom: 30px;
+}
+.user-show .block2 {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.user-show .block2 h4 {
+  color: grey;
+  text-shadow: 1px 2px 2px #cecccc;
+}
+.user-show .block2 .content div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+}
+.user-show .block2 .content span {
+  vertical-align: middle;
+}
+.user-show .block2 .content a {
+  margin-left: 10px;
+}
+.user-show .block3 {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.user-show .block3 .card {
+  margin-right: 50px;
+}
