@@ -37,6 +37,8 @@ require __DIR__.'/../vendor/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+SassCompiler::run("scss/", "css/");
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application

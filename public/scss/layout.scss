@@ -1,0 +1,36 @@
+.wrap{
+  display: flex;
+  height: 100vh;
+  .sidebar{
+    background-color: #222222;
+    width: 180px;
+    text-align: center;
+    overflow: scroll;
+    ul{
+      padding-left: 0;
+      li{
+        margin-top: 30px;
+      }
+        .title{
+          margin-top: 50px;
+        }
+        .goal{
+          margin-top: 150px;
+        }
+        .logout{
+          margin-top: 200px;
+        }
+      a{
+        color: white;
+      }
+    }
+  }
+  
+  .main{
+    background-color: rgb(245, 245, 245);
+    width: calc(100vw - 180px);
+    padding: 20px 50px;
+    overflow: scroll;
+    
+  }
+}

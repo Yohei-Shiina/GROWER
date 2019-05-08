@@ -1,0 +1,31 @@
+.index-page {
+  height: 100%;
+  box-sizing: border-box;
+}
+.index-page .page {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+.index-page .lists {
+  max-height: 400px;
+  overflow: scroll;
+}
+.index-page .lists .list {
+  margin-bottom: 10px;
+}
+.index-page .lists .list .content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.index-page .lists .list .content .created-time {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+}
+.index-page .options {
+  margin-top: 40px;
+  margin-left: 0;
+}
+.index-page .options .card {
+  margin-right: 50px;
+  padding: 0 20px;
+}
