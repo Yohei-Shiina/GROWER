@@ -1,0 +1,32 @@
+.index-page{
+  height: 100%;
+  box-sizing: border-box;
+  .page{
+    margin-bottom: 30px;
+  }
+
+  .lists{
+    max-height: 400px;
+    overflow: scroll;
+    .list{
+      margin-bottom: 10px;
+      .content{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .created-time{
+          margin-bottom: 10px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+        }
+      }
+    }
+  }
+  .options{
+    margin-top: 40px;
+    margin-left: 0;
+    .card{
+      margin-right: 50px;
+      padding: 0 20px;
+
+    }
+  }
+}
