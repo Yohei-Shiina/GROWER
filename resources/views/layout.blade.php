@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/layout.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.index.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/targets.create.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.show.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 
 
         <title>GROWER</title>

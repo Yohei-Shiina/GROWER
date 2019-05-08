@@ -1,19 +1,22 @@
 @extends('layout')
 
 @section('content')
-<div> 
-  <h1>目標を掲げる</h1>
+<div class="create-page"> 
+  <h4>目標を立てる</h4>
 
-  {{ Form::open(['url' => '/targets', 'method' => 'post']) }}
-  <div>依頼内容</div>
-  {{ Form::text('goal', null, ["placeholder" => '入力必須']) }}
-  <div>期限</div> 
-  {{ Form::date('date', new DateTime())}}
-  {{ Form::input('time','time')}}
- 
-  <div>{{ Form::submit('依頼する') }}</div>
-
-  {{ Form::close()}}
+  <div class="form-group">{{ Form::open(['url' => '/targets', 'method' => 'post']) }}
+  
+  <div class="goal">{{ Form::label('goal', '目標')}}</div>
+  <div>{{ Form::text('goal', null, ["placeholder" => '目標を入力してください', "class" => "goal col-4"]) }}</div>
+  
+  <div class="date">{{ Form::label('date', '期限') }}</div>
+  <div>{{ Form::date('date', new DateTime(), ["class" => "date"])}}</div>
+  
+  <div class="time">{{ Form::label('time', '時間') }}</div>
+  <div class="time-input">{{ Form::input('time','time')}}</div>
+  
+  <div>{{ Form::submit('作成する', ["class" => "btn btn-primary"]) }}</div>
+  {{ Form::close()}}</div>
 </div>
 
 @endsection

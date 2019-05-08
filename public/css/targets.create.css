@@ -1,0 +1,20 @@
+.create-page h4 {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+.create-page .form-group input {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+}
+.create-page .form-group .goal {
+  font-size: 20px;
+}
+.create-page .form-group .date {
+  font-size: 20px;
+}
+.create-page .form-group .time {
+  font-size: 20px;
+}
+.create-page .form-group .time-input {
+  margin-bottom: 40px;
+}
