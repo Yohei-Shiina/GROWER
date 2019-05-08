@@ -16,9 +16,13 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::auth();
 
+
+
     Route::resource('users', 'UsersController', ['only' => 'show']);
 
     Route::get('/','TargetsController@index');
+
+    Route::post('/upload', 'UsersController@upload');
 
     Route::resource('targets', 'TargetsController');
     
