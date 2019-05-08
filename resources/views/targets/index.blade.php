@@ -1,8 +1,6 @@
 @extends('layout')
 
 @section('content')
-    
-
 <div class="index-page">
   <h4 class="page">目標リスト</h4>
   <div class="lists">
@@ -21,21 +19,21 @@
   <div class="options row">
     <div class="card text-center col-sm-10 col-md-4 col-lg-3">
       <div class="card-body">
-        <h5 class="card-title">目標を立てる</h5>
+        <h5 class="card-title">目標を作成する</h5>
         <a href="/targets/create" class="btn btn-primary">Visit this page</a>
       </div>
     </div>
 
     <div class="card text-center col-sm-10 col-md-4 col-lg-3">
       <div class="card-body">
-        <h5 class="card-title">マイページを見る</h5>
+        <h5 class="card-title">マイページ</h5>
         <a href="#" class="btn btn-primary">Visit this page</a>
       </div>
     </div>
 
     <div class="card text-center col-sm-10 col-md-4 col-lg-3">
       <div class="card-body">
-        <h5 class="card-title">やりたいことをみる</h5>
+        <h5 class="card-title">バケットリスト</h5>
         <a href="#" class="btn btn-primary">Visit this page</a>
       </div>
     </div>

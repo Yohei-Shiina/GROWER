@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="show-page">
-  <h4 class="page">プロジェクト</h4>
+  <h4 class="page">目標の詳細</h4>
   <div class="row"> 
-    <div class="title col-lg-10 col-md-12">
+    <div class="title col-lg-8 col-md-12">
       <h4 class="row">目標
         <div class="btns">
           <a href="/targets/{{$target->id}}/edit" class="btn btn-success">編集</a>
@@ -39,7 +39,7 @@
       @endforeach
       </div>
     </div>
-    <div class="form-group col-10">
+    <div class="form-group col-9">
       {{ Form::open(['url' => "/targets/{$target->id}/tasks", 'method' => 'post', 'class' => 'form']) }}
         <div class="row shadow">
       {{ Form::text('task', null, ["placeholder" => 'タスクを入力してください', 'class' => 'input']) }}

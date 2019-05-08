@@ -1,17 +1,19 @@
 @extends('layout')
 
 @section('content')
-<h1>編集画面</h1>
-{{ Form::open(['url' => "/targets/$target->id", 'method' => 'patch']) }}
-  <div>依頼内容</div>
-  {{ Form::text('goal', $target->goal, ["placeholder" => '入力必須']) }}
-  <div>期限</div> 
-  {{ Form::date('date', new DateTime())}}
-  {{ Form::input('time','time', '00:00')}}
-  <div>タスク</div>
-  {{-- {{ Form::text('task', null, ["placeholder" => 'タスクを入力してください']) }} --}}
-  <div>{{ Form::submit('編集を完了する') }}</div>
-
-  {{ Form::close() }}
-
+<div class="create-page"> 
+  <h4 class="page">目標を編集</h4>
+    <div class="form-group">{{ Form::open(['url' => "/targets/$target->id", 'method' => 'patch']) }}
+    
+    <div class="goal">{{ Form::label('goal', '目標')}}</div>
+    <div>{{ Form::text('goal', $target->goal, ["placeholder" => '目標を入力してください', "class" => "goal col-4"]) }}</div>
+    
+    <div class="date">{{ Form::label('date', '期限') }}</div>
+    <div>{{ Form::date('date', $target->date, ["class" => "date"])}}</div>
+    
+    <div class="time">{{ Form::label('time', '時間') }}</div>
+    <div class="time-input">{{ Form::input('time', 'time', $target->time)}}</div>
+    
+    <div>{{ Form::submit('編集する', ["class" => "btn btn-primary"]) }}</div>
+    {{ Form::close()}}</div>
 @endsection

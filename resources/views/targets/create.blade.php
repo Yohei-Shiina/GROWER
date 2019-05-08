@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="create-page"> 
-  <h4>目標を立てる</h4>
+  <h4 class="page">目標を作成</h4>
 
   <div class="form-group">{{ Form::open(['url' => '/targets', 'method' => 'post']) }}
   
@@ -13,7 +13,7 @@
   <div>{{ Form::date('date', new DateTime(), ["class" => "date"])}}</div>
   
   <div class="time">{{ Form::label('time', '時間') }}</div>
-  <div class="time-input">{{ Form::input('time','time')}}</div>
+  <div class="time-input">{{ Form::input('time','time', "00:00")}}</div>
   
   <div>{{ Form::submit('作成する', ["class" => "btn btn-primary"]) }}</div>
   {{ Form::close()}}</div>

@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 .index-page .page {
-  margin-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 40px;
 }
 .index-page .lists {
   max-height: 400px;
