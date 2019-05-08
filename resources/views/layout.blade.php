@@ -18,7 +18,7 @@
                     <li class="title"><a href="/">GROWER</a></li>
                     <li class="goal"><a href="/">目標リスト</a></li>
                     <li><a href="">バケットリスト</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href="/users/{{Auth::user()->id}}">マイページ</a></li>
                     <li class="logout"><a href="/logout">ログアウト</a></li>
                 </ul>
             </div>

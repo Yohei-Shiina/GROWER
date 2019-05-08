@@ -16,6 +16,8 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::auth();
 
+    Route::resource('users', 'UsersController', ['only' => 'show']);
+
     Route::get('/','TargetsController@index');
 
     Route::resource('targets', 'TargetsController');

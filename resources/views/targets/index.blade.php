@@ -27,7 +27,7 @@
     <div class="card text-center col-sm-10 col-md-4 col-lg-3">
       <div class="card-body">
         <h5 class="card-title">マイページ</h5>
-        <a href="#" class="btn btn-primary">Visit this page</a>
+      <a href="/users/{{Auth::user()->id}}" class="btn btn-primary">Visit this page</a>
       </div>
     </div>
 
