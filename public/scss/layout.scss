@@ -2,7 +2,7 @@
   display: flex;
   height: 100vh;
   .sidebar{
-    background-color: #222222;
+    background-color: #363636;
     width: 180px;
     text-align: center;
     overflow: scroll;
@@ -27,7 +27,7 @@
   }
   
   .main{
-    background-color: rgb(245, 245, 245);
+    background-color: #f5f8fa;
     width: calc(100vw - 180px);
     padding: 20px 50px;
     overflow: scroll;

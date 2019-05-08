@@ -20,7 +20,9 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('users', 'UsersController', ['only' => 'show']);
 
-    Route::get('/','TargetsController@index');
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
     Route::post('/upload', 'UsersController@upload');
 
