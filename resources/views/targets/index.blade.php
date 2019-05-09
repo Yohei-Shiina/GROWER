@@ -34,7 +34,7 @@
     <div class="card text-center col-sm-10 col-md-4 col-lg-3 shadow">
       <div class="card-body">
         <h5 class="card-title">バケットリスト</h5>
-        <a href="#" class="btn btn-primary">Visit this page</a>
+        <a href="/buckets" class="btn btn-primary">Visit this page</a>
       </div>
     </div>
 
