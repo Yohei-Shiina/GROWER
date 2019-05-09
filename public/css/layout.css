@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .wrap .sidebar {
-  background-color: #222;
+  background-color: #363636;
   width: 180px;
   text-align: center;
   overflow: scroll;
@@ -27,7 +27,7 @@
   color: white;
 }
 .wrap .main {
-  background-color: #f5f5f5;
+  background-color: #f5f8fa;
   width: calc(100vw - 180px);
   padding: 20px 50px;
   overflow: scroll;

@@ -1,0 +1,61 @@
+.user-show{
+  .page{
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  .block1{
+    margin-bottom: 30px;
+    .user-photo{
+      padding-left: 20px;
+      margin-bottom: 0;
+      img{
+        display: block;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto 20px;
+      }
+      .file{
+        margin-left: 50px;
+      }
+      input{
+        display: block;
+        margin: 0 auto;
+      }
+      .btn{
+        margin-top: 5px;
+      }
+    }
+    .user-description p{
+      min-width: 200px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  .block2{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    h4{
+      color: grey;
+      text-shadow: 1px 2px 2px rgb(206, 204, 204);
+    }
+    .content{
+
+      div{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+      }
+      span{
+        vertical-align: middle;
+      }
+      a{
+        margin-left: 10px;
+      }
+    }
+  }
+  .block3{
+    margin-top: 10px;
+    margin-left: 30px;
+    .card{
+      margin-right: 50px;
+    }
+  }
+}

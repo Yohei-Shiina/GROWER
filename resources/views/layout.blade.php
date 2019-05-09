@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ asset('/css/targets.index.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.create.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.show.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/targets.show.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/users.show.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 
 
@@ -16,9 +18,9 @@
             <div class="sidebar">
                 <ul>
                     <li class="title"><a href="/">GROWER</a></li>
-                    <li class="goal"><a href="/">目標リスト</a></li>
+                    <li class="goal"><a href="/targets">目標リスト</a></li>
                     <li><a href="">バケットリスト</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href="/users/{{Auth::user()->id}}">マイページ</a></li>
                     <li class="logout"><a href="/logout">ログアウト</a></li>
                 </ul>
             </div>
