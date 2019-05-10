@@ -31,4 +31,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Target::class);
     }
+    public function buckets()
+    {
+        return $this->hasMany(Bucket::class);
+    }
 }

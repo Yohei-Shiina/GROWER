@@ -1,0 +1,35 @@
+.buckets-index .page {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+.buckets-index .form-group .row {
+  margin: 0 auto;
+  min-width: 250px;
+}
+.buckets-index .form-group .row .input {
+  border-radius: 5px;
+  border: none;
+}
+.buckets-index .wishes {
+  margin-top: 60px;
+}
+.buckets-index .wishes ol {
+  padding: 0;
+  width: calc(100vw - 280px);
+  margin: 0;
+}
+.buckets-index .wishes ol .list {
+  margin-bottom: 30px;
+}
+.buckets-index .wishes ol .list li {
+  min-width: 230px;
+  margin-left: 5px;
+  border-radius: 10px;
+  max-height: 75px;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+.buckets-index .wishes ol .list .btn {
+  width: 58px;
+  margin-top: 5.5px;
+}

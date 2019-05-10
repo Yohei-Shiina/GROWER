@@ -13,18 +13,16 @@
 
 
 Route::group(['middleware' => ['web']], function(){
-
-    Route::auth();
-
-
-
-    Route::resource('users', 'UsersController', ['only' => 'show']);
-
+    
     Route::get('/', function () {
         return view('welcome');
     });
 
-    Route::post('/upload', 'UsersController@upload');
+    Route::auth();
+
+    Route::resource('users', 'UsersController', ['only' => 'show']);
+
+    Route::post('upload', 'UsersController@upload');
 
     Route::resource('targets', 'TargetsController');
     
@@ -33,4 +31,8 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('targets/{id}/delete', 'TargetsController@destroy');
 
     Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@destroy');
+
+    Route::resource('buckets', 'BucketsController', ['index', 'store']);
+
+    Route::post('buckets/{id}/form', 'BucketsController@postForm');
 });
