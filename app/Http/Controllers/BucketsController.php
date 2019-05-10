@@ -22,4 +22,11 @@ class BucketsController extends Controller
         ]);
         return redirect('/buckets');
     }
+
+    public function destroy($id) {
+        Bucket::destroy($id);
+        
+    
+        return redirect('/buckets');
+      }
 }

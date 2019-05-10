@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('users', 'UsersController', ['only' => 'show']);
 
-    Route::post('/upload', 'UsersController@upload');
+    Route::post('upload', 'UsersController@upload');
 
     Route::resource('targets', 'TargetsController');
     
@@ -33,4 +33,6 @@ Route::group(['middleware' => ['web']], function(){
     Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@destroy');
 
     Route::resource('buckets', 'BucketsController', ['index', 'store']);
+
+    Route::get('buckets/{id}/delete', 'BucketsController@destroy');
 });

@@ -29,9 +29,9 @@
         <div class="btns">
           @if($bucket->status == false)
           <a class="btn btn-primary shadow" href="/">達成</a>
-          <a class="btn btn-danger shadow" href="/">削除</a>
+          <a class="btn btn-danger shadow" href="/buckets/{{ $bucket->id }}/delete">削除</a>
           @else
-          <a class="btn btn-danger shadow" href="/">削除</a>
+          <a class="btn btn-danger shadow" href="/buckets/{{ $bucket->id }}/delete">削除</a>
           @endif
         </div>
       </div>
