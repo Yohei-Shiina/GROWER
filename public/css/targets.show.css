@@ -19,6 +19,10 @@
 .show-page .title .row .btns {
   margin: 0 0 0 auto;
 }
+.show-page .title .row .btns input {
+  color: #fff;
+  text-shadow: 1px 2px 2px #cecccc;
+}
 .show-page .title .goal {
   max-height: 140px;
   font-size: 20px;

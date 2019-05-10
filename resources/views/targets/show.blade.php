@@ -8,8 +8,17 @@
     <div class="title col-lg-8 col-md-12">
       <h4 class="row">目標
         <div class="btns">
-          <a href="/targets/{{ $target->id }}/edit" class="btn btn-success">編集</a>
-          <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
+          @if ($target->status == false)
+            <form action="/targets/{{ $target->id }}" method="post" >
+              {{ csrf_field() }}
+              {{ method_field('patch')}}
+              <input type="submit" class="btn btn-warning shadow" name="achieve" value="達成">
+              <a href="/targets/{{ $target->id }}/edit" class="btn btn-success">編集</a>
+              <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
+            </form>
+          @else
+            <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
+          @endif
         </div>
       </h4>
       <div class="goal breadcrumb bg-white"> {{ $target->goal }} </div>
