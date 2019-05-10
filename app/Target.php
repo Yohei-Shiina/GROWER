@@ -8,7 +8,7 @@ use DateTime;
 class Target extends Model
 {
 
-    protected $fillable = ['goal', 'date', 'time', 'user_id'];
+    protected $fillable = ['goal', 'date', 'time', 'user_id', 'status'];
 
     public function tasks()
     {

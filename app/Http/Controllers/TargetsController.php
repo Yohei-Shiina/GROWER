@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Target;
 use App\Task;
+use Illuminate\Support\Facades\Input;
 class TargetsController extends Controller
 {
     
@@ -29,12 +30,12 @@ class TargetsController extends Controller
 
     public function store(Request $request)
     {
-        
         Target::create([
             'goal' => $request->goal,
             'date' => $request->date,
             'time' => $request->time,
             'user_id' => 1,
+            'status' => false,
         ]);
         return view('targets.store');
     }
@@ -53,12 +54,20 @@ class TargetsController extends Controller
     }
 
     public function update(Request $request, $id)
-    {   
-        Target::find($id)->update([
-            'goal' => $request->goal,
-            'date' => $request->date,
-            'time' => $request->time,
-        ]);
+    {
+        $target = Target::find($id);
+
+        if (Input::get('achieve')){
+            $target->update([
+                'status' => true
+                ]);
+        }else{
+            $target->update([
+                'goal' => $request->goal,
+                'date' => $request->date,
+                'time' => $request->time,
+            ]);
+        }
         return view('targets.update');
     }
 

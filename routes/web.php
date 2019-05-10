@@ -17,7 +17,6 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('/', function () {
         return view('welcome');
     });
-
     Route::auth();
 
     Route::resource('users', 'UsersController', ['only' => 'show']);
@@ -28,11 +27,11 @@ Route::group(['middleware' => ['web']], function(){
     
     Route::resource('targets.tasks', 'TasksController', ['only' => 'store']);
     
+    Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@postForm');
+    
     Route::get('targets/{id}/delete', 'TargetsController@destroy');
-
-    Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@destroy');
-
-    Route::resource('buckets', 'BucketsController', ['index', 'store']);
-
+    
+    Route::resource('buckets', 'BucketsController', ['only' => ['index', 'store']]);
+    
     Route::post('buckets/{id}/form', 'BucketsController@postForm');
 });
