@@ -9,16 +9,17 @@ class BucketsController extends Controller
 {
     public function index()
     {
-        $wishes = Bucket::all();
+        $buckets = Bucket::all();
 
-        return view('buckets.index')->with('wishes', $wishes);
+        return view('buckets.index')->with('buckets', $buckets);
     }
     
     public function store(Request $request)
     {
         Bucket::create([
             "wish" => $request->wish,
+            "status" => "0",
         ]);
-        return redirect('buckets.index');
+        return redirect('/buckets');
     }
 }

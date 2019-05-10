@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('/css/targets.show.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.show.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/users.show.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/buckets.index.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 
 
