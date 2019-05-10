@@ -10,8 +10,11 @@
         <div class="created-time">{{$target->created_at}}</div>
         <span class="goal">{{$target->goal}}</span>
       </div>
+      @if ($target->status == false)
       <span class="badge badge-warning">未達</span>
+      @else
       <span class="badge badge-danger">完了</span>
+      @endif
       <a class="badge badge-primary" href="/targets/{{$target->id}}">詳細</a>
     </div>
     @endforeach
