@@ -38,12 +38,17 @@
       <?php $i = 1; ?>
       @foreach($tasks as $task)
       <div class="list breadcrumb bg-white">
-        <span>{{ $i }}. {{ $task->task }}</span>
-        <form method="post" action="/targets/{{ $target->id }}/tasks/{{ $task->id }}">
-          {{ csrf_field() }}
-          <button type="submit" class="btn btn-warning">完了</button>
-          <button type="submit" class="btn btn-danger">削除</button>
-        </form>
+        <div>
+          @unless($target->status == false)
+            <span class="badge badge-warning">達成!!</span>
+          @endunless
+          {{ $i }}. {{ $task->task }}
+          <form method="post" action="/targets/{{ $target->id }}/tasks/{{ $task->id }}">
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-warning">完了</button>
+            <button type="submit" class="btn btn-danger">削除</button>
+          </form>
+        </div>
       </div>
       <?php $i++ ?>
       @endforeach
