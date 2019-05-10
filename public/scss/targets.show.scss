@@ -10,7 +10,6 @@
   .title{
     padding: 0px 30px;
     .row{
-      text-shadow: 1px 2px 2px rgb(206, 204, 204);
       color: grey;
       margin: 0;
       .btns{
@@ -19,6 +18,11 @@
           color: #fff;
           text-shadow: 1px 2px 2px #cecccc;
         }
+        a{
+          margin-left: 10px;
+          border-radius: 5px;
+          font-size: 13px;
+        }
       }
     }
     .goal{
@@ -26,6 +30,10 @@
       font-size: 20px;
       overflow: scroll;
       filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+    }
+    .badge{
+      margin: auto 0;
+      margin-right: 10px;
     }
   }
   .due{
@@ -62,10 +70,16 @@
         div{
           font-size: 16px;
           overflow: scroll;
-          padding-top: 6px;
+          p{
+            font-size: 15px;
+            margin-bottom: 0;
+            word-wrap: break-word;
+          }
         }
-        button{
+        input{
           margin-left: 10px;
+          border-radius: 5px;
+          font-size: 13px;
         }
       }
     }
@@ -78,7 +92,7 @@
       margin-left: 5px;
       .input{
         width: calc(100% - 58px);
-        border-radius: 5px;
+        border-radius: 20px;
         border: none;
       }
     }

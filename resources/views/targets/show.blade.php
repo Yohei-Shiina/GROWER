@@ -8,20 +8,22 @@
     <div class="title col-lg-8 col-md-12">
       <h4 class="row">目標
         <div class="btns">
-          @if ($target->status == false)
-            <form action="/targets/{{ $target->id }}" method="post" >
-              {{ csrf_field() }}
-              {{ method_field('patch')}}
-              <input type="submit" class="btn btn-warning shadow" name="achieve" value="達成">
-              <a href="/targets/{{ $target->id }}/edit" class="btn btn-success">編集</a>
-              <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
-            </form>
-          @else
+          <form action="/targets/{{ $target->id }}" method="post" >
+            {{ csrf_field() }}
+            {{ method_field('patch')}}
+            @unless($target->status == true)
+            <input type="submit" class="btn btn-primary shadow" name="achieve" value="達成">
+            <a href="/targets/{{ $target->id }}/edit" class="btn btn-success">編集</a>
+            @endunless
             <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
-          @endif
+          </form>
         </div>
       </h4>
-      <div class="goal breadcrumb bg-white"> {{ $target->goal }} </div>
+      <div class="goal breadcrumb bg-white">
+        @unless($target->status == false)
+        <p class="badge badge-warning">達成!!</p>
+        @endunless{{ $target->goal }}
+      </div>
     </div>
 
     <div class="due col-lg-3 col-md-12">
@@ -35,23 +37,25 @@
     <div class="task col-md-12">
       <h4>タスク</h4>
       <div class="tasks">
-      <?php $i = 1; ?>
-      @foreach($tasks as $task)
-      <div class="list breadcrumb bg-white">
-        <div>
-          @unless($target->status == false)
-            <span class="badge badge-warning">達成!!</span>
-          @endunless
-          {{ $i }}. {{ $task->task }}
-          <form method="post" action="/targets/{{ $target->id }}/tasks/{{ $task->id }}">
+        <?php $i = 1; ?>
+        @foreach($tasks as $task)
+        <div class="list breadcrumb bg-white">
+          <div>
+            @unless($task->status == false)
+              <p class="badge badge-warning">達成!!</p>
+            @endunless
+            {{ $i }}. {{ $task->task }}
+          </div>
+          <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
             {{ csrf_field() }}
-            <button type="submit" class="btn btn-warning">完了</button>
-            <button type="submit" class="btn btn-danger">削除</button>
+            @unless($task->status == true)
+            <input type="submit" class="btn-primary shadow" name="change" value="達成?">
+            @endunless
+            <input type="submit" class="btn-danger shadow" name="delete" value="削除">
           </form>
         </div>
-      </div>
-      <?php $i++ ?>
-      @endforeach
+        <?php $i++ ?>
+        @endforeach
       </div>
     </div>
     <div class="form-group col-9">
