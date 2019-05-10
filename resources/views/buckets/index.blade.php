@@ -26,14 +26,16 @@
           @endif
           {{ $bucket->wish }}
         </li>
-        <div class="btns">
+        <form method="post" action="/buckets/{{$bucket->id }}/form" class="btns">
+          {{ csrf_field() }}
           @if($bucket->status == false)
-          <a class="btn btn-primary shadow" href="/">達成</a>
-          <a class="btn btn-danger shadow" href="/buckets/{{ $bucket->id }}/delete">削除</a>
+          <input type="submit" class="btn btn-primary shadow" name="change" value="達成">
+          <input type="submit" class="btn btn-danger shadow" name="delete" value="削除">
           @else
-          <a class="btn btn-danger shadow" href="/buckets/{{ $bucket->id }}/delete">削除</a>
+          <input type="submit" class="btn btn-default shadow" name="change" value="未達">
+          <input type="submit" class="btn btn-danger shadow" name="delete" value="削除">
           @endif
-        </div>
+        </form>
       </div>
       @endforeach
     </ol>

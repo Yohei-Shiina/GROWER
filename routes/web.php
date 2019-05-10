@@ -34,5 +34,5 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('buckets', 'BucketsController', ['index', 'store']);
 
-    Route::get('buckets/{id}/delete', 'BucketsController@destroy');
+    Route::post('buckets/{id}/form', 'BucketsController@postForm');
 });
