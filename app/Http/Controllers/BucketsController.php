@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bucket;
+use Auth;
 use Illuminate\Support\Facades\Input;
 
 class BucketsController extends Controller
 {
     public function index()
     {
-        $buckets = Bucket::all();
+        $buckets = Auth::user()->buckets()->get();
 
         return view('buckets.index')->with('buckets', $buckets);
     }
@@ -20,6 +21,7 @@ class BucketsController extends Controller
         Bucket::create([
             "wish" => $request->wish,
             "status" => "0",
+            "user_id" => Auth::user()->id,
         ]);
         return redirect('/buckets');
     }
@@ -51,5 +53,4 @@ class BucketsController extends Controller
     public function destroy($id) {
         Bucket::destroy($id);
     }
-
 }
