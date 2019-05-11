@@ -43,6 +43,7 @@
     <h4>現在取り組んでいる目標</h4>
     <div class="lists">
       @foreach ($targets as $target)
+      @unless($target->status == true)
       <div class="list">
         <div class="content list-group-item col-10 shadow">
           <div class="created-time">{{$target->created_at}}</div>
@@ -50,6 +51,7 @@
           <a class="badge badge-primary" href="/targets/{{$target->id}}">詳細</a>
         </div>
       </div>
+      @endunless
       @endforeach
     </div>
   </div>
