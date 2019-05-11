@@ -37,7 +37,7 @@ class TargetsController extends Controller
             'user_id' => Auth::user()->id,
             'status' => false,
         ]);
-        return view('targets.store');
+        return redirect('/targets');
     }
 
     public function show($id)
@@ -84,7 +84,7 @@ class TargetsController extends Controller
                 'time' => $request->time,
             ]);
         }
-        return view('targets.update');
+        return redirect("/targets/{$id}");
     }
 
     public function destroy($id)
@@ -92,6 +92,6 @@ class TargetsController extends Controller
         $target = Target::find($id);      
         $target->delete();
 
-        return view('targets.destroy');
+        return redirect('targets');
     }
 }
