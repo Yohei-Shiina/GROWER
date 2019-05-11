@@ -22,7 +22,8 @@
       <div class="goal breadcrumb bg-white">
         @unless($target->status == false)
         <p class="badge badge-warning">達成!!</p>
-        @endunless{{ $target->goal }}
+        @endunless
+        {{ $target->goal }}
       </div>
     </div>
 

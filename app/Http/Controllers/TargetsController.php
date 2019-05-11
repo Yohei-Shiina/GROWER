@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Target;
 use App\Task;
+use Auth;
 use Illuminate\Support\Facades\Input;
 class TargetsController extends Controller
 {
@@ -16,8 +17,7 @@ class TargetsController extends Controller
 
     public function index()
     {
-        
-        $targets = Target::all();
+        $targets = Auth::user()->targets()->get();
         return view('targets.index')->with("targets", $targets);
     }
     
@@ -34,7 +34,7 @@ class TargetsController extends Controller
             'goal' => $request->goal,
             'date' => $request->date,
             'time' => $request->time,
-            'user_id' => 1,
+            'user_id' => Auth::user()->id,
             'status' => false,
         ]);
         return view('targets.store');
@@ -42,9 +42,25 @@ class TargetsController extends Controller
 
     public function show($id)
     {
-        $target = Target::with('tasks')->find($id);
-        $tasks = $target->tasks()->get();
-        return view('targets.show')->with(array('target'=> $target, 'tasks' => $tasks));
+        $target_id = Target::find($id);
+
+        if($target_id){
+            
+            if($target_id->user_id != Auth::user()->id){
+                
+                return back();
+
+            }else{
+                
+                $target = $target_id;
+                $tasks = $target->tasks()->get();
+                return view('targets.show')->with(array('target'=> $target, 'tasks' => $tasks));
+            }
+
+        }else{
+            
+            return back();
+        }
     }
 
     public function edit($id)

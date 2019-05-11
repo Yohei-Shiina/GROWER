@@ -26,7 +26,7 @@ class BucketsController extends Controller
     {
         Bucket::create([
             "wish" => $request->wish,
-            "status" => "0",
+            "status" => 0,
             "user_id" => Auth::user()->id,
         ]);
         return redirect('/buckets');
