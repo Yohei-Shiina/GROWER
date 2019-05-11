@@ -7,6 +7,10 @@ use Auth;
 use App\User;
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function getLogout()
     {
@@ -15,9 +19,14 @@ class UsersController extends Controller
     }
     public function show($id)
     {   
+        $current_user_id = Auth::user()->id;
+        if ($id != Auth::user()->id) {
+            return redirect("/users/{$current_user_id}");
+        } else {
         $user = Auth::user();
         $targets = User::find($id)->targets()->get();
         return view('users.show')->with(array('targets' => $targets, 'user' => $user));
+        }
     }
     public function upload(Request $request)
     {
