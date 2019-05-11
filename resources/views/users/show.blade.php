@@ -32,9 +32,9 @@
 
 
     <div class="user-description col-5">
-      <p class="list-group-item shadow">{{ Auth::user()->name}} さんのページ</p>
-      <p class="list-group-item shadow">目標達成回数　{{$targets->count()}}回</p>
-      <p class="list-group-item shadow">やりたいことリスト　150個</p>
+      <p class="list-group-item shadow">{{ $user->name}} さんのページ</p>
+      <p class="list-group-item shadow">達成目標数　{{$user->targets()->where('status', true)->count()}}回</p>
+    <p class="list-group-item shadow">やりたいことリスト　{{ $user->buckets()->count() }}個</p>
     </div>
 
   </div>
