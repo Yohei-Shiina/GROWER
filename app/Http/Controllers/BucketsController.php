@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Input;
 
 class BucketsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $buckets = Auth::user()->buckets()->get();
@@ -20,7 +26,7 @@ class BucketsController extends Controller
     {
         Bucket::create([
             "wish" => $request->wish,
-            "status" => "0",
+            "status" => 0,
             "user_id" => Auth::user()->id,
         ]);
         return redirect('/buckets');

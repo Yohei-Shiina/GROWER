@@ -7,18 +7,36 @@ use Auth;
 use App\User;
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function getLogout()
     {
         Auth::logout();
         return redirect('/login');
     }
+
     public function show($id)
     {   
-        $user = Auth::user();
-        $targets = User::find($id)->targets()->get();
-        return view('users.show')->with(array('targets' => $targets, 'user' => $user));
+        if(User::find($id)){
+
+            $user = Auth::user();
+            if ($id != $user->id) {
+                
+                return back();
+            } else {
+                
+                $targets = Auth::user()->targets()->get();
+                
+                return view('users.show')->with(array('targets' => $targets, 'user' => $user));
+            }
+        }else{
+            return back();
+        }
     }
+    
     public function upload(Request $request)
     {
         $this->validate($request, [

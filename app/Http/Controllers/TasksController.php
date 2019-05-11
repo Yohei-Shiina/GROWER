@@ -7,6 +7,11 @@ use App\Task;
 use Illuminate\Support\Facades\Input;
 class TasksController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function store($id, Request $request)
     {
         $task = Task::create([
