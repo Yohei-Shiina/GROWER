@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <div>
                         <div class="checkbox">
                             <label>
@@ -43,7 +43,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <div>
@@ -51,9 +51,9 @@
                             ログイン
                         </button>
 
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                 パスワードをお忘れですか？
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </form>
