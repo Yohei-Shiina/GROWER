@@ -24,12 +24,13 @@ class BucketsController extends Controller
     
     public function store(Request $request)
     {
-        Bucket::create([
+        $bucket = Bucket::create([
             "wish" => $request->wish,
             "status" => 0,
             "user_id" => Auth::user()->id,
         ]);
-        return redirect('/buckets');
+        return response()->json($bucket);
+        // return redirect('/buckets');
     }
 
     
