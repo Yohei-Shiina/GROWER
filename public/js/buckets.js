@@ -1,4 +1,5 @@
 
+
 function postWish(text) {
 
   $.ajax({
@@ -13,16 +14,13 @@ function postWish(text) {
     var wish = responseData.wish;
     var ol = $('ol');
     var list = 
-      '<div class="lists row col-lg-6 col-sm-12">'
-        + '<li class="list-group-item shadow col-8">'
-          + wish
-        + '</li>'
-        + '<form class="' + responseData.id + '">'
-          + '<input type="submit" class="change btn btn-primary shadow" name="change" value="達成">'
-          + '<input type="submit" class="change btn btn-danger shadow" name="delete" value="削除">'
-        + '</form>'
-      + '</div>'
-    ;
+      `<div class="lists row col-lg-6 col-sm-12">
+          <li class="list-group-item shadow col-8">${wish}</li>
+          <div class="${responseData.id}">
+            <input type="submit" class="change btn btn-primary shadow" name="change" value="達成">
+            <input type="submit" class="change btn btn-danger shadow" name="delete" value="削除">
+          </div>
+        </div>`;
     
     ol.append(list);
   }).fail(function(error) {
@@ -42,10 +40,12 @@ function controlBtn(btn, id) {
       if(btn.attr('class') == "change btn btn-primary shadow"){
         btn.removeClass().addClass("change btn btn-default shadow");
         list.prepend(budge);
-        btn.val('未達')
+        btn.val('未達');
       }else{
         btn.removeClass().addClass("change btn btn-primary shadow");
         list.children('span').remove();
+        btn.val('達成');
+
       }
     });
   }
