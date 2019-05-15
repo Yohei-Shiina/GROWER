@@ -28,14 +28,14 @@
           {{ $bucket->wish }}
         </li>
 
-        <form method="post" action="/buckets/{{$bucket->id }}/form" class="btns">
+        <form method="post" action="/buckets/{{$bucket->id }}/delete" class="btns">
           {{ csrf_field() }}
           @if($bucket->status == false)
-          <input type="submit" class="btn btn-primary shadow" name="change" value="達成">
-          <input type="submit" class="btn btn-danger shadow" name="delete" value="削除">
+          <input type="submit" class="change btn btn-primary shadow" name="change" value="達成">
+          <input type="submit" class="change btn btn-danger shadow" name="delete" value="削除">
           @else
-          <input type="submit" class="btn btn-default shadow" name="change" value="未達">
-          <input type="submit" class="btn btn-danger shadow" name="delete" value="削除">
+          <input type="submit" class="change btn btn-default shadow" name="change" value="未達">
+          <input type="submit" class="change btn btn-danger shadow" name="delete" value="削除">
           @endif
         </form>
       </div>
@@ -43,4 +43,5 @@
     </ol>
   </div>
 </div>
+
 @endsection

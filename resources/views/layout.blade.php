@@ -37,6 +37,12 @@
             $("#add").on("click", function() {
                 postWish($(".input").val());
             });
+
+            $(document).on("click", ".change", function() {
+                var id = $(this).parent().attr('class');
+                controlBtn($(this), id)
+                
+            });
         </script>
     </body>
 </html>

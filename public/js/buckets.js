@@ -11,30 +11,53 @@ function postWish(text) {
     }
   }).done(function(responseData) {
     var wish = responseData.wish;
-    var status = responseData.status;
-    var id;
     var ol = $('ol');
-    var nesting = 
+    var list = 
       '<div class="lists row col-lg-6 col-sm-12">'
-      +'<li class="list-group-item shadow col-8">'
-      + '<span class="badge badge-warning">達成!!</span>'
-      + wish
-      + '</li>'
+        + '<li class="list-group-item shadow col-8">'
+          + wish
+        + '</li>'
+        + '<form class="' + responseData.id + '">'
+          + '<input type="submit" class="change btn btn-primary shadow" name="change" value="達成">'
+          + '<input type="submit" class="change btn btn-danger shadow" name="delete" value="削除">'
+        + '</form>'
+      + '</div>'
     ;
-    ol.append(nesting);
-
-    // ol.append($('<li/>').append($('<div/>')));
-    // ol.append($('<div class="lists row col-lg-6 col-sm-12"/>')
-    // .append($('<li class="list-group-item shadow col-8">/')
-    // .append($('<span class="badge badge-warning">達成!!</span>/')
-    // )));
-    // ($('.lists')).append($('<form method="post" action="/buckets/{{$bucket->id }}/form" class="btns">')
-    // .append($('<input type="submit" class="btn btn-primary shadow" name="change" value="達成">'))
-    // .append($('<input type="submit" class="btn btn-danger shadow" name="delete" value="削除">')
-    // ));
     
-
+    ol.append(list);
   }).fail(function(error) {
     console.log(error);
   });
+}
+function controlBtn(btn, id) {
+  if(btn.attr('name') == "change"){
+    $.ajax({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: "PUT",
+      dataType: "json",
+      url: "/buckets/" + id,
+    }).done(function(){
+      var budge = '<span class="badge badge-warning">達成!!</span>';
+      var list = $(btn.parent().siblings()[0]);
+      if(btn.attr('class') == "change btn btn-primary shadow"){
+        btn.removeClass().addClass("change btn btn-default shadow");
+        list.prepend(budge);
+        btn.val('未達')
+      }else{
+        btn.removeClass().addClass("change btn btn-primary shadow");
+        list.children('span').remove();
+      }
+    });
+  }
+  else{
+    console.log('delete');
+    $.ajax({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: "DELETE",
+      dataType: "json",
+      url: "/buckets/" + id,
+    }).done(function(){
+      btn.parent().parent().remove();
+    });
+  }
 }
