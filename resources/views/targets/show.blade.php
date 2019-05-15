@@ -37,6 +37,7 @@
   
     <div class="task col-md-12">
       <h4>タスク</h4>
+
       <div class="tasks">
         <?php $i = 1; ?>
         @foreach($tasks as $task)
@@ -45,26 +46,31 @@
             @unless($task->status == false)
               <p class="badge badge-warning">達成!!</p>
             @endunless
-            {{ $i }}. {{ $task->task }}
+            {{ $task->task }}
           </div>
-          <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
+          {{-- <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
             {{ csrf_field() }}
             @unless($task->status == true)
             <input type="submit" class="btn-primary shadow" name="change" value="達成?">
             @endunless
             <input type="submit" class="btn-danger shadow" name="delete" value="削除">
-          </form>
+          </form> --}}
         </div>
         <?php $i++ ?>
         @endforeach
       </div>
+
     </div>
+
     <div class="form-group col-9">
-      {{ Form::open(['url' => "/targets/{$target->id}/tasks", 'method' => 'post', 'class' => 'form']) }}
+      {{-- <form action="/targets/{{$target->id}}/tasks" method="POST" class="form"> --}}
+        {{ csrf_field() }}
         <div class="row shadow">
-      {{ Form::text('task', null, ["placeholder" => 'タスクを入力してください', 'class' => 'input']) }}
-      {{ Form::submit('追加', ['class' => "btn btn-primary"]) }}
-      </div>{{ Form::close() }}
+          <input type="hidden" value="{{$target->id}}" class="hidden">
+          <input placeholder="タスクを入力してください" class="input" name="task" type="text">
+          <input type="submit" class="btn btn-primary" id="task-add" value="追加">
+        </div>
+      {{-- </form> --}}
     </div>
   </div>
 </div>

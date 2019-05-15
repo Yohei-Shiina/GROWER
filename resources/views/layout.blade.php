@@ -34,14 +34,20 @@
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('/js/buckets.js')}}"></script>
         <script>
-            $("#add").on("click", function() {
+            // バケットリストの追加ボタン押下時
+            $("#bucket-add").on("click", function() {
                 postWish($(".input").val());
             });
-
-            $(document).on("click", ".change", function() {
+            // やりたいことリストの達成、削除ボタン押下時
+            $(document).on("click", "#bucket", function() {
                 var id = $(this).parent().attr('class');
                 controlBtn($(this), id)
-                
+            });
+            // タスクの一覧
+            $(document).on("click","#task-add", function() {
+                var id = $('.hidden').val();
+                var text = $("#task-add").prev().val();
+                postTask(text, id)
             });
         </script>
     </body>

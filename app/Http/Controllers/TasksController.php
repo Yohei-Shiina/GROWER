@@ -19,7 +19,9 @@ class TasksController extends Controller
             'target_id' => $id,
             'status' => false,
             ]);
-        return redirect("targets/{$task->target->id}");
+        return response()->json([$task, $id]);
+
+        // return redirect("targets/{$task->target->id}");
     }
     
     public function postForm($target_id, $task_id)

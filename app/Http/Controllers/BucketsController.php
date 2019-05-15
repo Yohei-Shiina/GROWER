@@ -30,7 +30,6 @@ class BucketsController extends Controller
             "user_id" => Auth::user()->id,
         ]);
         return response()->json($bucket);
-        // return redirect('/buckets');
     }
 
 
