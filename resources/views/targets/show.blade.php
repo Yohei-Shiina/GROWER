@@ -51,7 +51,9 @@
           <div class="btns">
             <input type="hidden" data-taskId="{{$task->id}}" class="hidden">
             <input type="hidden" data-targetId="{{$task->target_id}}" class="hidden">
+            @unless($task->status == true)
             <input type="submit" class="btn-primary shadow" name="change" value="達成?">
+            @endunless
             <input type="submit" class="btn-danger shadow" name="delete" value="削除">
           </div>
         </div>

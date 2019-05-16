@@ -101,7 +101,10 @@ function taskButton(btn, target_id, task_id) {
       dataType: "json",
       url: "/targets/" + target_id + "/tasks/" + task_id,
     }).done(function(){
-      console.log("hoge")
+      var budgePos = btn.parent().siblings()[0];
+      var budge = `<p class="badge badge-warning">達成!!</p>`
+      $(budgePos).prepend(budge);
+      btn.remove();
     }).fail(function(error) {
       console.log(error);
     });
@@ -113,7 +116,7 @@ function taskButton(btn, target_id, task_id) {
       dataType: "json",
       url: "/targets/" + target_id + "/tasks/" + task_id,
     }).done(function(){
-      console.log("deleted successfully")
+      btn.parent().parent().remove();
     }).fail(function(error) {
       console.log(error);
     });
