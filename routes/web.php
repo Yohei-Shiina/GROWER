@@ -25,9 +25,7 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('targets', 'TargetsController');
     
-    Route::resource('targets.tasks', 'TasksController', ['only' => 'store']);
-    
-    Route::post('targets/{target_id}/tasks/{task_id}', 'TasksController@postForm');
+    Route::resource('targets.tasks', 'TasksController', ['only' => ['store', 'update', 'destroy']]);
     
     Route::get('targets/{id}/delete', 'TargetsController@destroy');
     

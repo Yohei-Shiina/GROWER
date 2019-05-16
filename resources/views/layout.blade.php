@@ -49,6 +49,15 @@
                 var text = $("#task-add").prev().val();
                 postTask(text, id)
             });
+            // タスクの達成、削除ボタン押下時
+            $(document).on("click", ".list input[type=submit]", function() {
+                console.log($(this));
+                var task = $(this).siblings()[0];
+                var task_id = $(task).attr('data-taskId');
+                var target = $(this).siblings()[1];
+                var target_id = $(target).attr('data-targetId');
+                taskButton($(this), target_id, task_id);
+            });
         </script>
     </body>
 </html>

@@ -48,13 +48,12 @@
             @endunless
             {{ $task->task }}
           </div>
-          <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
-            {{ csrf_field() }}
-            @unless($task->status == true)
+          <div class="btns">
+            <input type="hidden" data-taskId="{{$task->id}}" class="hidden">
+            <input type="hidden" data-targetId="{{$task->target_id}}" class="hidden">
             <input type="submit" class="btn-primary shadow" name="change" value="達成?">
-            @endunless
             <input type="submit" class="btn-danger shadow" name="delete" value="削除">
-          </form>
+          </div>
         </div>
         <?php $i++ ?>
         @endforeach

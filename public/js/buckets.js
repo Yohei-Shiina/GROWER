@@ -77,7 +77,7 @@ function postTask(text, id) {
     var html =
     `<div class="list breadcrumb bg-white">
       <div>
-        ${task.task}
+        ${ task.task }
       </div>
       <div class="btns">
         <input type="hidden" data-taskId="${task.id}" class="hidden">
@@ -88,5 +88,34 @@ function postTask(text, id) {
     </div>
     `; 
     $('.tasks').append(html);
+  }).fail(function(error) {
+    console.log(error);
   });
+}
+//  タスクの達成、削除ボタン押下時
+function taskButton(btn, target_id, task_id) {
+  if(btn.attr('name') == "change"){
+    $.ajax({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: "PUT",
+      dataType: "json",
+      url: "/targets/" + target_id + "/tasks/" + task_id,
+    }).done(function(){
+      console.log("hoge")
+    }).fail(function(error) {
+      console.log(error);
+    });
+  }
+  else{
+    $.ajax({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: "DELETE",
+      dataType: "json",
+      url: "/targets/" + target_id + "/tasks/" + task_id,
+    }).done(function(){
+      console.log("deleted successfully")
+    }).fail(function(error) {
+      console.log(error);
+    });
+  }
 }
