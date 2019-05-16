@@ -43,9 +43,9 @@
                 var id = $(this).parent().attr('class');
                 controlBtn($(this), id)
             });
-            // タスクの一覧
-            $(document).on("click","#task-add", function() {
-                var id = $('.hidden').val();
+            // タスクの追加ボタン押下時
+            $("#task-add").on("click", function() {
+                var id = $('.form-group .hidden').val();
                 var text = $("#task-add").prev().val();
                 postTask(text, id)
             });

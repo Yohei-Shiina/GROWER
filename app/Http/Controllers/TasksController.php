@@ -14,12 +14,13 @@ class TasksController extends Controller
     
     public function store($id, Request $request)
     {
+
         $task = Task::create([
             'task' => $request->task,
             'target_id' => $id,
             'status' => false,
             ]);
-        return response()->json([$task, $id]);
+        return response()->json($task);
 
         // return redirect("targets/{$task->target->id}");
     }

@@ -74,14 +74,14 @@ function postTask(text, id) {
       "task": text,
     }
   }).done(function(task) {
-    $task = task[0];
     var html =
     `<div class="list breadcrumb bg-white">
       <div>
-        ${ $task.task }
+        ${task.task}
       </div>
       <div class="btns">
-        <input type="hidden" value="${$task.id}" class="hidden">
+        <input type="hidden" data-taskId="${task.id}" class="hidden">
+        <input type="hidden" data-targetId="${task.target_id}" class="hidden">
         <input type="submit" class="btn-primary shadow" name="change" value="達成?">
         <input type="submit" class="btn-danger shadow" name="delete" value="削除">
       </div>

@@ -5,7 +5,7 @@
 <div class="show-page">
   <h4 class="page">目標の詳細</h4>
   <div class="row"> 
-    <div class="title col-lg-8 col-md-12">
+    <div class="title-unit col-lg-8 col-md-12">
       <h4 class="row">目標
         <div class="btns">
           <form action="/targets/{{ $target->id }}" method="post" >
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="due col-lg-3 col-md-12">
+    <div class="due-unit col-lg-3 col-md-12">
       <h6>期限</h6>
       <span class="due-time list-group-item rounded">{{ $target->due() }}</span>
 
@@ -35,7 +35,7 @@
     <span class=" passed-time list-group-item rounded">{{ $target->passedTime() }}</span>
     </div>
   
-    <div class="task col-md-12">
+    <div class="task-unit col-md-12">
       <h4>タスク</h4>
 
       <div class="tasks">
@@ -48,13 +48,13 @@
             @endunless
             {{ $task->task }}
           </div>
-          {{-- <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
+          <form action="/targets/{{$target->id}}/tasks/{{$task->id}}" method="POST">
             {{ csrf_field() }}
             @unless($task->status == true)
             <input type="submit" class="btn-primary shadow" name="change" value="達成?">
             @endunless
             <input type="submit" class="btn-danger shadow" name="delete" value="削除">
-          </form> --}}
+          </form>
         </div>
         <?php $i++ ?>
         @endforeach
