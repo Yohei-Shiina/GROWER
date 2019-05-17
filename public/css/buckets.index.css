@@ -18,10 +18,10 @@
   width: calc(100vw - 280px);
   margin: 0;
 }
-.buckets-index .wishes ol .list {
+.buckets-index .wishes ol .lists {
   margin-bottom: 30px;
 }
-.buckets-index .wishes ol .list li {
+.buckets-index .wishes ol .lists li {
   min-width: 230px;
   margin-left: 5px;
   border-radius: 10px;
@@ -29,7 +29,7 @@
   word-wrap: break-word;
   overflow: scroll;
 }
-.buckets-index .wishes ol .list .btn {
+.buckets-index .wishes ol .lists .btn {
   width: 58px;
   margin-top: 5.5px;
 }

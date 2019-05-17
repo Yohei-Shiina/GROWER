@@ -24,25 +24,14 @@ class BucketsController extends Controller
     
     public function store(Request $request)
     {
-        Bucket::create([
+        $bucket = Bucket::create([
             "wish" => $request->wish,
             "status" => 0,
             "user_id" => Auth::user()->id,
         ]);
-        return redirect('/buckets');
+        return response()->json($bucket);
     }
 
-    
-    public function postForm($id)
-    {
-        if(Input::get('change')){
-            $this->update($id);
-
-        }elseif (Input::get('delete')){
-            $this->destroy($id);
-        }
-        return redirect('/buckets');
-    }
 
     public function update($id)
     {
@@ -54,9 +43,14 @@ class BucketsController extends Controller
         }else{
             $wish->update(array('status' => false));
         }
+        return response()->json();
+
     }
 
     public function destroy($id) {
         Bucket::destroy($id);
+        return response()->json();
+
+        return back();
     }
 }

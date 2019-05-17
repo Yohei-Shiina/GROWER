@@ -20,7 +20,7 @@ class Target extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function due()
+    public function dueTime()
     {
         $date = strval($this->date);
         $time = strval($this->time);
@@ -34,14 +34,15 @@ class Target extends Model
             return $diff->format("%d日%h時間%i分");
         } else{
             // 期限が現在よりも過去
-            return "期限終了";
+            return "時間切れ";
         }
     }
     public function passedTime()
     {
         $now = new DateTime('now');
         $createdTime = new DateTime($this->created_at);
-        return $createdTime->diff($now)->format('%h時間%i分');
+        $passedTime = $createdTime->diff($now)->format('%h時間%i分%s秒');
+        return $passedTime;
         
     }
 }
