@@ -1,5 +1,7 @@
 <?php
 
+// use App\Target;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +33,8 @@ Route::group(['middleware' => ['web']], function(){
     
     Route::resource('buckets', 'BucketsController', ['only' => ['index', 'store', 'update', 'destroy']]);
     
-    // Route::post('buckets/{id}/delete', 'BucketsController@destroy');
+    Route::get('/time', 'TargetsController@passedTime');
+
+    Route::get('/duetime', 'TargetsController@dueTime');
+
 });

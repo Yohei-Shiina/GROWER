@@ -28,11 +28,11 @@
     </div>
 
     <div class="due-unit col-lg-3 col-md-12">
-      <h6>期限</h6>
-      <span class="due-time list-group-item rounded">{{ $target->due() }}</span>
+      <h6>制限時間</h6>
+    <span class="due-time list-group-item rounded" id="dueTime" data-id="{{$target->id}}">{{ $target->dueTime() }}</span>
 
       <h6>経過時間</h6>
-    <span class=" passed-time list-group-item rounded">{{ $target->passedTime() }}</span>
+    <span class=" passed-time list-group-item rounded" id="passedTime" data-id="{{$target->id}}">{{$target->passedTime()}}</span>
     </div>
   
     <div class="task-unit col-md-12">

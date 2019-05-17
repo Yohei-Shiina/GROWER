@@ -25,6 +25,7 @@
                 </ul>
             </div>
             <div class="main">
+                <p id="nowTime"></p>
                 @yield('content')
             </div>
         </div>
@@ -33,6 +34,7 @@
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('/js/buckets.js')}}"></script>
+        <script src="{{asset('/js/clock.js')}}"></script>
         <script>
             // バケットリストの追加ボタン押下時
             $("#bucket-add").on("click", function() {
