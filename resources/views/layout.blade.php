@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="{{ asset('/css/welcome.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/layout.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.index.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/targets.create.css') }}">
@@ -10,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('/css/users.show.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/buckets.index.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         
         <title>GROWER</title>
     </head>
@@ -25,7 +27,6 @@
                 </ul>
             </div>
             <div class="main">
-                <p id="nowTime"></p>
                 @yield('content')
             </div>
         </div>

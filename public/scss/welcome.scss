@@ -1,0 +1,27 @@
+.welcome-page{
+  h1{
+
+    font-weight: 600;
+    font-size: 80px;
+    text-align: center;
+    margin: 80px auto 90px;
+  }
+  .explanation{
+    margin-bottom: 100px;
+    padding-left: 180px;
+    div{ 
+      font-size: 20px;
+      margin-bottom: 30px;    
+    }
+  }
+  
+  .buttons{
+    margin-left: 55px;
+  }
+  
+  @media only screen and (max-width: 720px){
+    
+    .explanation{ padding-left: 30px; }
+    .buttons { margin-left: 40px; }
+  }
+}

@@ -61,14 +61,14 @@
           <h5 class="card-title">目標を作成する</h5>
           <a href="/targets/create" class="btn btn-primary">Visit this page</a>
         </div>
-      </div>
+    </div>
   
-      <div class="card text-center col-sm-10 col-md-4 col-lg-3 shadow">
-        <div class="card-body">
-          <h5 class="card-title">バケットリスト</h5>
-          <a href="/buckets" class="btn btn-primary">Visit this page</a>
-        </div>
+    <div class="card text-center col-sm-10 col-md-4 col-lg-3 shadow">
+      <div class="card-body">
+        <h5 class="card-title">バケットリスト</h5>
+        <a href="/buckets" class="btn btn-primary">Visit this page</a>
       </div>
+    </div>
   </div>
 </div>
 @endsection
