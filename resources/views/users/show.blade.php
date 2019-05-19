@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="user-show">
-<h4 class="page">マイページ</h4>
+<h4 class="page">マイページ<span> あなたのページです。取り組み中の目標や達成数などが確認できるよ！</span></h4>
 {{ Form::open(['url' =>'/upload', 'method' => 'post', 'files' => 'true']) }}
   {{-- 成功時のメッセージ --}}
   @if (session('success'))
@@ -20,8 +20,8 @@
     </div>
   @endif
   
-  <div class="block1 row col-12">
-    <div class="user-photo col-5">
+  <div class="user row col-12">
+    <div class="user-photo col-md-6 col-sm-12">
       @if ($user->avatar_filename)
       <img src="{{ asset('storage/avatar/' . $user->avatar_filename) }}" alt="avatar" />
       @endif
@@ -31,44 +31,29 @@
     {{ Form::close()}}
 
 
-    <div class="user-description col-5">
+    <div class="user-description col-6">
       <p class="list-group-item shadow">{{ $user->name}} さんのページ</p>
-      <p class="list-group-item shadow">達成目標数　{{$user->targets()->where('status', true)->count()}}回</p>
+      <p class="list-group-item shadow">目標の達成数　{{$user->targets()->where('status', true)->count()}}回</p>
     <p class="list-group-item shadow">やりたいことリスト　{{ $user->buckets()->count() }}個</p>
     </div>
 
   </div>
 
-  <div class="block2">
-    <h4>現在取り組んでいる目標</h4>
+  <div class="goals">
+    <h5>現在取り組んでいる目標</h5>
     <div class="lists">
       @foreach ($targets as $target)
       @unless($target->status == true)
       <div class="list">
-        <div class="content list-group-item col-10 shadow">
+        <div class="content list-group-item col-12 shadow">
           <div class="created-time">{{$target->created_at}}</div>
           <span class="goal">{{$target->goal}}</span>
-          <a class="badge badge-primary" href="/targets/{{$target->id}}">詳細</a>
+          <a class="badge badge-primary" href="/targets/{{$target->id}}">詳細を見る</a>
         </div>
       </div>
       @endunless
       @endforeach
     </div>
-  </div>
-  <div class="block3 row">
-    <div class="card text-center col-sm-10 col-md-4 col-lg-3 shadow">
-        <div class="card-body">
-          <h5 class="card-title">目標を作成する</h5>
-          <a href="/targets/create" class="btn btn-primary">Visit this page</a>
-        </div>
-      </div>
-  
-      <div class="card text-center col-sm-10 col-md-4 col-lg-3 shadow">
-        <div class="card-body">
-          <h5 class="card-title">バケットリスト</h5>
-          <a href="/buckets" class="btn btn-primary">Visit this page</a>
-        </div>
-      </div>
   </div>
 </div>
 @endsection

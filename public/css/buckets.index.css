@@ -2,6 +2,11 @@
   margin-top: 25px;
   margin-bottom: 45px;
 }
+.buckets-index .page span {
+  font-size: 15px;
+  margin-left: 15px;
+  color: #696868;
+}
 .buckets-index .form-group .row {
   margin: 0 auto;
   min-width: 250px;
@@ -30,6 +35,6 @@
   overflow: scroll;
 }
 .buckets-index .wishes ol .lists .btn {
-  width: 58px;
+  width: 64px;
   margin-top: 5.5px;
 }

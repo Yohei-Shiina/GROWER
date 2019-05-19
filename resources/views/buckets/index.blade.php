@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="buckets-index">
-  <h4 class="page">バケットリスト</h4>
+  <h4 class="page">バケットリスト<span> あなたが人生でやってみたいことを、忘れないように"視覚化"しよう！気づいたら達成していることも?!</span></h4>
   
   <div class="form-group">
       <div class="form">
@@ -29,7 +29,7 @@
         </li>
         <div class="{{$bucket->id}}">
           @if($bucket->status == false)
-          <input type="submit" class="btn btn-primary shadow" id="bucket" name="change" value="達成">
+          <input type="submit" class="btn btn-primary shadow" id="bucket" name="change" value="達成?">
           <input type="submit" class="btn btn-danger shadow" id="bucket" name="delete" value="削除">
           @else
           <input type="submit" class="btn btn-default shadow" id="bucket" name="change" value="未達">

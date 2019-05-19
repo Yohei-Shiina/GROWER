@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="create-page"> 
-  <h4 class="page">目標を編集</h4>
+  <h4 class="page">目標を編集<span> 目標を編集しよう！</span></h4>
     <div class="form-group">{{ Form::open(['url' => "/targets/$target->id", 'method' => 'patch']) }}
     
     <div class="goal">{{ Form::label('goal', '目標')}}</div>

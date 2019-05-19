@@ -1,0 +1,37 @@
+.welcome-page h1 {
+  font-family: 'roboto', sans-serif;
+  font-weight: 600;
+  font-size: 80px;
+  text-align: center;
+  margin: 30px auto 30px;
+}
+.welcome-page div {
+  margin-bottom: 30px;
+}
+.welcome-page p {
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+.welcome-page p span {
+  font-weight: bold;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.welcome-page .explanation {
+  padding-left: 180px;
+}
+.welcome-page .explanation span {
+  font-size: 20px;
+  margin-bottom: 30px;
+  display: block;
+}
+.welcome-page .explanation span a {
+  width: 138px;
+}
+@media only screen and (max-width: 720px) {
+  .welcome-page .explanation {
+    padding-left: 30px;
+  }
+}

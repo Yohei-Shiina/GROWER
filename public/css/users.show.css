@@ -2,54 +2,51 @@
   margin-top: 25px;
   margin-bottom: 30px;
 }
-.user-show .block1 {
+.user-show .page span {
+  font-size: 15px;
+  margin-left: 15px;
+  color: #696868;
+}
+.user-show .user {
   margin-bottom: 30px;
 }
-.user-show .block1 .user-photo {
+.user-show .user .user-photo {
   padding-left: 20px;
   margin-bottom: 0;
 }
-.user-show .block1 .user-photo img {
+.user-show .user .user-photo img {
   display: block;
   height: 200px;
   width: 200px;
   margin: 0 auto 20px;
 }
-.user-show .block1 .user-photo .file {
+.user-show .user .user-photo .file {
   margin-left: 50px;
 }
-.user-show .block1 .user-photo input {
+.user-show .user .user-photo input {
   display: block;
   margin: 0 auto;
 }
-.user-show .block1 .user-photo .btn {
+.user-show .user .user-photo .btn {
   margin-top: 5px;
 }
-.user-show .block1 .user-description p {
+.user-show .user .user-description p {
   min-width: 200px;
   margin-bottom: 30px;
 }
-.user-show .block2 {
+.user-show .goals {
   margin-left: 30px;
   margin-bottom: 20px;
 }
-.user-show .block2 h4 {
-  color: grey;
+.user-show .goals h5 {
   text-shadow: 1px 2px 2px #cecccc;
 }
-.user-show .block2 .content div {
+.user-show .goals .content div {
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
 }
-.user-show .block2 .content span {
+.user-show .goals .content span {
   vertical-align: middle;
 }
-.user-show .block2 .content a {
+.user-show .goals .content a {
   margin-left: 10px;
-}
-.user-show .block3 {
-  margin-top: 10px;
-  margin-left: 30px;
-}
-.user-show .block3 .card {
-  margin-right: 50px;
 }

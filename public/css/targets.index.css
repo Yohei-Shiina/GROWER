@@ -1,31 +1,47 @@
 .index-page {
-  height: 100%;
   box-sizing: border-box;
 }
 .index-page .page {
   margin-top: 25px;
   margin-bottom: 40px;
 }
+.index-page .page span {
+  font-size: 15px;
+  margin-left: 15px;
+  color: #696868;
+}
 .index-page .lists {
-  max-height: 400px;
+  border: #d0cee7 solid 1px;
+  max-height: 340px;
   overflow: scroll;
 }
 .index-page .lists .list {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .index-page .lists .list .content {
+  border: #d0cee7 solid 1px;
+  background-color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.index-page .lists .list .content .goal {
+  font-weight: bold;
 }
 .index-page .lists .list .content .created-time {
   margin-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
 }
-.index-page .options {
-  margin-top: 40px;
-  margin-left: 0;
+.index-page .lists .list .badges {
+  font-size: 20px;
 }
-.index-page .options .card {
-  margin-right: 50px;
-  padding: 0 20px;
+.index-page .explanation {
+  margin-top: 46px;
+}
+.index-page .explanation span {
+  font-size: 20px;
+  margin-bottom: 30px;
+  display: block;
+}
+.index-page .explanation span a {
+  width: 138px;
 }

@@ -1,3 +1,7 @@
+*{
+  font-family: 'メイリオ', sans-serif;
+}
+
 .wrap{
   display: flex;
   height: 100vh;
@@ -21,6 +25,11 @@
           margin-top: 200px;
         }
       a{
+        color: rgba(240, 234, 234, 0.89);
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover{
         color: white;
       }
     }

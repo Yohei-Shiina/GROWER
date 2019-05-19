@@ -3,22 +3,22 @@
 @section('content')
 
 <div class="show-page">
-  <h4 class="page">目標の詳細</h4>
+  <h4 class="page">目標の詳細<span> 目標の詳細ページです。タスクを追加しよう！</span></h4>
   <div class="row"> 
     <div class="title-unit col-lg-8 col-md-12">
-      <h4 class="row">目標
+      <h5 class="row">あなたが達成したい目標
         <div class="btns">
           <form action="/targets/{{ $target->id }}" method="post" >
             {{ csrf_field() }}
             {{ method_field('patch')}}
             @unless($target->status == true)
-            <input type="submit" class="btn btn-primary shadow" name="achieve" value="達成">
+            <input type="submit" class="btn btn-primary shadow" name="achieve" value="達成?">
             <a href="/targets/{{ $target->id }}/edit" class="btn btn-success">編集</a>
             @endunless
             <a href="/targets/{{ $target->id }}/delete" class="btn btn-danger">削除</a>
           </form>
         </div>
-      </h4>
+      </h5>
       <div class="goal breadcrumb bg-white">
         @unless($target->status == false)
         <p class="badge badge-warning">達成!!</p>
@@ -29,15 +29,13 @@
 
     <div class="due-unit col-lg-3 col-md-12">
       <h6>制限時間</h6>
-    <span class="due-time list-group-item rounded" id="dueTime" data-id="{{$target->id}}">{{ $target->dueTime() }}</span>
-
+      <span class="due-time list-group-item rounded" id="dueTime" data-id="{{$target->id}}">{{ $target->dueTime() }}</span>
       <h6>経過時間</h6>
-    <span class=" passed-time list-group-item rounded" id="passedTime" data-id="{{$target->id}}">{{$target->passedTime()}}</span>
+      <span class=" passed-time list-group-item rounded" id="passedTime" data-id="{{$target->id}}">{{$target->passedTime()}}</span>
     </div>
   
     <div class="task-unit col-md-12">
-      <h4>タスク</h4>
-
+      <h5>タスク<span>タスクを追加しよう！何をすれば目標が達成できますか？</span></h5>
       <div class="tasks">
         <?php $i = 1; ?>
         @foreach($tasks as $task)
@@ -60,20 +58,17 @@
         <?php $i++ ?>
         @endforeach
       </div>
-
-    </div>
-
-    <div class="form-group col-9">
-      {{-- <form action="/targets/{{$target->id}}/tasks" method="POST" class="form"> --}}
-        {{ csrf_field() }}
-        <div class="row shadow">
-          <input type="hidden" value="{{$target->id}}" class="hidden">
-          <input placeholder="タスクを入力してください" class="input" name="task" type="text">
-          <input type="submit" class="btn btn-primary" id="task-add" value="追加">
-        </div>
-      {{-- </form> --}}
-    </div>
+    </div>    
   </div>
+  @unless($target->status == true)
+    <div class="form-group">
+      <div class="row">
+        <input type="hidden" value="{{$target->id}}" class="hidden">
+        <input placeholder="タスクを具体的に入力してください" class="input col-7 shadow" name="task" type="text">
+        <input type="submit" class="btn btn-primary shadow" id="task-add" value="追加">
+      </div>
+    </div>
+  @endunless
 </div>
 
 @endsection
