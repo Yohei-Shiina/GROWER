@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'メイリオ', sans-serif;
 }
 .wrap {
   display: flex;
@@ -27,6 +27,11 @@
   margin-top: 200px;
 }
 .wrap .sidebar ul a {
+  color: rgba(240, 234, 234, 0.89);
+  text-decoration: none;
+  font-weight: bold;
+}
+.wrap .sidebar ul a:hover {
   color: white;
 }
 .wrap .main {

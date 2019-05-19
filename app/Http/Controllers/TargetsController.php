@@ -32,14 +32,14 @@ class TargetsController extends Controller
 
     public function store(Request $request)
     {
-        Target::create([
+        $target = Target::create([
             'goal' => $request->goal,
             'date' => $request->date,
             'time' => $request->time,
             'user_id' => Auth::user()->id,
             'status' => false,
         ]);
-        return redirect('/targets');
+        return redirect("targets/{$target->id}");
     }
 
     public function show($id)
@@ -91,7 +91,8 @@ class TargetsController extends Controller
 
     public function destroy($id)
     {
-        $target = Target::find($id);      
+        $target = Target::find($id);
+        $target->tasks()->delete();   
         $target->delete();
 
         return redirect('targets');

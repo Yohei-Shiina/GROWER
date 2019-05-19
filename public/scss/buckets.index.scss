@@ -2,6 +2,11 @@
   .page{
     margin-top: 25px;
     margin-bottom: 45px;
+    span{
+      font-size: 15px;
+      margin-left: 15px;
+      color: rgb(105, 104, 104);
+    }
   }
   .form-group{
     .row{
@@ -30,7 +35,7 @@
           overflow: scroll;
         }
           .btn{
-            width: 58px;
+            width: 64px;
             margin-top: 5.5px;
         }
       }

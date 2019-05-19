@@ -1,9 +1,15 @@
 .user-show{
+  
   .page{
     margin-top: 25px;
     margin-bottom: 30px;
+    span{
+      font-size: 15px;
+      margin-left: 15px;
+      color: rgb(105, 104, 104);
+    }
   }
-  .block1{
+  .user{
     margin-bottom: 30px;
     .user-photo{
       padding-left: 20px;
@@ -31,11 +37,10 @@
     }
   }
   
-  .block2{
+  .goals{
     margin-left: 30px;
     margin-bottom: 20px;
-    h4{
-      color: grey;
+    h5{
       text-shadow: 1px 2px 2px rgb(206, 204, 204);
     }
     .content{
@@ -49,13 +54,6 @@
       a{
         margin-left: 10px;
       }
-    }
-  }
-  .block3{
-    margin-top: 10px;
-    margin-left: 30px;
-    .card{
-      margin-right: 50px;
     }
   }
 }

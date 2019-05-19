@@ -1,33 +1,49 @@
 .index-page{
-  height: 100%;
   box-sizing: border-box;
   .page{
     margin-top: 25px;
     margin-bottom: 40px;
+    span{
+      font-size: 15px;
+      margin-left: 15px;
+      color: rgb(105, 104, 104);
+    }
   }
 
   .lists{
-    max-height: 400px;
+    border: rgb(208, 206, 231) solid 1px;
+    max-height: 340px;
     overflow: scroll;
     .list{
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       .content{
+        border: rgb(208, 206, 231) solid 1px;
+        background-color: #fff;
         padding-top: 10px;
         padding-bottom: 10px;
+        .goal{
+          font-weight: bold;
+        }
         .created-time{
           margin-bottom: 10px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.226);
         }
       }
+      .badges{
+        font-size: 20px;
+      }
     }
   }
-  .options{
-    margin-top: 40px;
-    margin-left: 0;
-    .card{
-      margin-right: 50px;
-      padding: 0 20px;
 
+  .explanation{
+    margin-top: 46px;
+    span{ 
+      font-size: 20px;
+      margin-bottom: 30px;
+      display: block;
+      a{
+        width: 138px;
+      }
     }
   }
 }

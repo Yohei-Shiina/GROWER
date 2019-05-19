@@ -19,11 +19,12 @@
         <div class="wrap">
             <div class="sidebar">
                 <ul>
-                    <li class="title"><a href="/">GROWER</a></li>
-                    <li class="goal"><a href="/targets">目標リスト</a></li>
-                    <li><a href="/buckets">バケットリスト</a></li>
-                    <li><a href="/users/{{Auth::user()->id}}">マイページ</a></li>
-                    <li class="logout"><a href="/logout">ログアウト</a></li>
+                    <li class="title"><a href="/"><div>GROWER</div></a></li>
+                    <li class="goal"><a href="/targets"><div>目標一覧</div></a></li>
+                    <li><a href="/targets/create"><div>目標を作成する</div></a></li>
+                    <li><a href="/buckets"><div>バケットリスト</div></a></li>
+                    <li><a href="/users/{{Auth::user()->id}}"><div>マイページ</div></a></li>
+                    <li class="logout"><a href="/logout"><div>ログアウト</div></a></li>
                 </ul>
             </div>
             <div class="main">
@@ -35,11 +36,13 @@
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('/js/buckets.js')}}"></script>
+        <script src="{{asset('/js/tasks.js')}}"></script>
         <script src="{{asset('/js/clock.js')}}"></script>
         <script>
             // バケットリストの追加ボタン押下時
             $("#bucket-add").on("click", function() {
                 postWish($(".input").val());
+                $(".input").val("");
             });
             // やりたいことリストの達成、削除ボタン押下時
             $(document).on("click", "#bucket", function() {
@@ -50,6 +53,7 @@
             $("#task-add").on("click", function() {
                 var id = $('.form-group .hidden').val();
                 var text = $("#task-add").prev().val();
+                $("#task-add").prev().val("");
                 postTask(text, id)
             });
             // タスクの達成、削除ボタン押下時
