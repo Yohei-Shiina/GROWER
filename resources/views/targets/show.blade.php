@@ -35,7 +35,7 @@
     </div>
   
     <div class="task-unit col-md-12">
-      <h5>タスク<span>タスクを追加しよう！何をすれば目標が達成できる？</span></h5>
+      <h5>タスク<span>タスクを追加しよう！何をすれば目標が達成できますか？</span></h5>
       <div class="tasks">
         <?php $i = 1; ?>
         @foreach($tasks as $task)
@@ -60,13 +60,15 @@
       </div>
     </div>    
   </div>
-  <div class="form-group">
+  @unless($target->status == true)
+    <div class="form-group">
       <div class="row">
         <input type="hidden" value="{{$target->id}}" class="hidden">
         <input placeholder="タスクを具体的に入力してください" class="input col-7 shadow" name="task" type="text">
         <input type="submit" class="btn btn-primary shadow" id="task-add" value="追加">
       </div>
-  </div>
+    </div>
+  @endunless
 </div>
 
 @endsection
