@@ -23,15 +23,22 @@
 .wrap .sidebar ul .goal {
   margin-top: 150px;
 }
-.wrap .sidebar ul .logout {
-  margin-top: 200px;
-}
 .wrap .sidebar ul a {
   color: rgba(240, 234, 234, 0.89);
   text-decoration: none;
   font-weight: bold;
 }
 .wrap .sidebar ul a:hover {
+  color: white;
+}
+.wrap .sidebar .logout {
+  margin-top: 200px;
+  border: none;
+  background-color: #363636;
+  color: rgba(240, 234, 234, 0.89);
+  font-weight: bold;
+}
+.wrap .sidebar .logout:hover {
   color: white;
 }
 .wrap .main {
