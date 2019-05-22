@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use Illuminate\Support\Facades\Storage;
+
 class UsersController extends Controller
 {
     public function __construct()
@@ -23,14 +25,27 @@ class UsersController extends Controller
         if(User::find($id)){
 
             $user = Auth::user();
+            // 不正アクセスの時
             if ($id != $user->id) {
                 
                 return back();
+            // 正しいアクセスの時
             } else {
+                $targets = $user->targets()->get();
+
+                $disk = Storage::disk('s3');
+
+                // 画像あれば
+                if($user->avatar){
+                    $image = $disk->url($user->avatar->image);
+                }
+                // 画像がなければ
+                else{
+                    $image = $disk->url("NoImage.png");
+                }
                 
-                $targets = Auth::user()->targets()->get();
                 
-                return view('users.show')->with(array('targets' => $targets, 'user' => $user));
+                return view('users.show')->with(array('targets' => $targets, 'user' => $user, 'image'=> $image));
             }
         }else{
             return back();

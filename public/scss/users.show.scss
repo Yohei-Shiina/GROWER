@@ -16,19 +16,16 @@
       margin-bottom: 0;
       img{
         display: block;
-        height: 200px;
-        width: 200px;
+        height: 220px;
+        width: 220px;
         margin: 0 auto 20px;
-      }
-      .file{
-        margin-left: 50px;
       }
       input{
         display: block;
-        margin: 0 auto;
+        margin-left: 30%;
       }
       .btn{
-        margin-top: 5px;
+
       }
     }
     .user-description p{
@@ -38,8 +35,6 @@
   }
   
   .goals{
-    margin-left: 30px;
-    margin-bottom: 20px;
     h5{
       text-shadow: 1px 2px 2px rgb(206, 204, 204);
     }
