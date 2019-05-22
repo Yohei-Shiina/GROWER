@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('users', 'UsersController', ['only' => 'show']);
 
-    Route::post('upload', 'UsersController@upload');
+    Route::post('/upload', 'AvatarController@upload');
 
     Route::resource('targets', 'TargetsController');
     
@@ -37,8 +37,10 @@ Route::group(['middleware' => ['web']], function(){
     
     Route::resource('buckets', 'BucketsController', ['only' => ['index', 'store', 'update', 'destroy']]);
     
-    Route::get('/time', 'TargetsController@passedTime');
+    Route::get('/time', 'ClocksController@passedTime');
 
-    Route::get('/duetime', 'TargetsController@dueTime');
+    Route::get('/duetime', 'ClocksController@dueTime');
+
+    Route::get('/image', 'AvatarController@show');
 
 });

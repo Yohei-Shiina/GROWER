@@ -7,8 +7,8 @@ use App\Target;
 use App\Task;
 use Auth;
 use DateTime;
-
 use Illuminate\Support\Facades\Input;
+
 class TargetsController extends Controller
 {
     
@@ -96,38 +96,5 @@ class TargetsController extends Controller
         $target->delete();
 
         return redirect('targets');
-    }
-
-    // Ajax処理による経過時間表示
-    public function passedTime(Request $request)
-    {
-        $target = Target::find($request->id);
-
-        $now = new DateTime('now');
-        $createdTime = new DateTime($target->created_at);
-        $passedTime = $createdTime->diff($now)->format('%h時間%i分%s秒');
-        
-
-        return response()->json($passedTime);
-    }
-
-    // Ajax処理による経過時間表示
-    public function dueTime(Request $request)
-    {
-        $target = Target::find($request->id);
-        $date = strval($target->date);
-        $time = strval($target->time);
-        $date_time = $date . " " . $time;
-        $dateTime = new DateTime($date_time);
-        $now = new DateTime("now");
-        if ($dateTime > $now == true) {
-            // 期限が現在よりも未来
-            $diff = $now->diff($dateTime);
-            $dueTime = $diff->format("%d日%h時間%i分");
-            return response()->json($dueTime);
-        } else{
-            // 期限が現在よりも過去
-            return response()->json("時間切れ");
-        }
     }
 }

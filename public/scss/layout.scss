@@ -14,27 +14,33 @@
       padding-left: 0;
       li{
         margin-top: 30px;
-      }
+        }
         .title{
           margin-top: 50px;
         }
         .goal{
           margin-top: 150px;
         }
-        .logout{
-          margin-top: 200px;
+        a{
+          color: rgba(240, 234, 234, 0.89);
+          text-decoration: none;
+          font-weight: bold;
         }
-      a{
+        a:hover{
+          color: white;
+        }
+      }
+      .logout{
+        margin-top: 200px;
+        border: none;
+        background-color: #363636;
         color: rgba(240, 234, 234, 0.89);
-        text-decoration: none;
         font-weight: bold;
       }
-      a:hover{
+      .logout:hover{
         color: white;
       }
     }
-  }
-  
   .main{
     background-color: #f5f8fa;
     width: calc(100vw - 180px);

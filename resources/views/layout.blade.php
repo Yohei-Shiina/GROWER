@@ -24,7 +24,10 @@
                     <li><a href="/targets/create"><div>目標を作成する</div></a></li>
                     <li><a href="/buckets"><div>バケットリスト</div></a></li>
                     <li><a href="/users/{{Auth::user()->id}}"><div>マイページ</div></a></li>
-                    <li class="logout"><a href="/logout"><div>ログアウト</div></a></li>
+                    <form action="/logout" method="POST">
+                        {{ csrf_field() }}
+                        <input type="submit" class="logout" value="ログアウト">
+                    </form>
                 </ul>
             </div>
             <div class="main">

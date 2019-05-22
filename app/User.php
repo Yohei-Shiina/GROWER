@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar_filname'
     ];
 
     /**
@@ -34,5 +34,9 @@ class User extends Authenticatable
     public function buckets()
     {
         return $this->hasMany(Bucket::class);
+    }
+    public function avatar()
+    {
+        return $this->hasOne(Avatar::class);
     }
 }

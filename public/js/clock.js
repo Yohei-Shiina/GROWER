@@ -10,7 +10,7 @@ function passedTime(){
       "id" : target_id,
     }
   }).done(function(reponseData){
-    console.dir(reponseData);
+
     document.getElementById('passedTime').innerHTML = reponseData;
   }).fail(function(error){
     console.log(error);
@@ -28,7 +28,7 @@ function dueTime(){
       "id" : target_id,
     }
   }).done(function(reponseData){
-    console.dir(reponseData);
+
     document.getElementById('dueTime').innerHTML = reponseData;
   }).fail(function(error){
     console.log(error);
