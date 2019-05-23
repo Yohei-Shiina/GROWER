@@ -32,6 +32,9 @@ class TargetsController extends Controller
 
     public function store(Request $request)
     {
+        if($request->goal == null){
+            return back();
+        }
         $target = Target::create([
             'goal' => $request->goal,
             'date' => $request->date,
@@ -73,6 +76,9 @@ class TargetsController extends Controller
 
     public function update(Request $request, $id)
     {
+        if($request->goal == null){
+            return back();
+        }
         $target = Target::find($id);
 
         if (Input::get('achieve')){
