@@ -14,6 +14,7 @@
   border: #d0cee7 solid 1px;
   max-height: 340px;
   overflow: scroll;
+  margin: 0 100px 46px;
 }
 .index-page .lists .list {
   margin-bottom: 30px;
@@ -35,7 +36,7 @@
   font-size: 20px;
 }
 .index-page .explanation {
-  margin-top: 46px;
+  margin-left: 100px;
 }
 .index-page .explanation span {
   font-size: 20px;
