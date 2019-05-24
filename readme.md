@@ -10,7 +10,7 @@ Visualizing your goals and tasks will help you manage yourself.<br>
                                                                                                                               
 
 # Versions as of May/24/2019
-Language：　PHP: 7.0.28<br>
+Language： PHP 7.0.28<br>
 Framework: 5.5.45<br>
 package: Laravel Collective<br>
 
@@ -25,6 +25,15 @@ package: Laravel Collective<br>
 
 4, Create your own bucket list in the page accessible from [バケットリスト] button on the left side of youur page!<br>
 
+5, Clicking [マイページ] will lead you to your My Page. you can set your profile picture and monitor your progress!<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ここから日本語です。
 
 # GROWER
 これは、あなたの目標達成をお手伝いするためのアプリケーションです。
@@ -35,18 +44,16 @@ package: Laravel Collective<br>
                                                                                                                               
 
 # バージョン 2019/5/24現在
-使用言語：　PHP: 7.0.28
-フレームワーク: 5.5.45
-パッケージ: Laravel Collective
+使用言語：　PHP: 7.0.28<br>
+フレームワーク: 5.5.45<br>
+パッケージ: Laravel Collective<br>
 
 # 使用方法
-
->ログイン前<br>
+<br>
+<br>
 ## ユーザー登録
-まずはユーザーの新規登録をしましょう！
+まずはユーザーの新規登録をしましょう！<br>
 登録が完了したら自動でログインされます。<br>
->ログイン後<br>
-*画面左の項目一覧*
 
 ## 目標を作成する
 まずは目標を設定しましょう。
