@@ -1,58 +1,118 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Japanese below 日本語は下です。
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# GROWER
+This is an application to help you achieve your goals more.
+<br>
+Visualizing your goals and tasks will help you manage yourself 
 
-## About Laravel
+<img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
+                                                                                                                              
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+# Versions as of May/24/2019
+Language：　PHP: 7.0.28
+Framework: 5.5.45
+package: Laravel Collective
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Usage
+>Before Login
+<br>
+## Register
+let's get started with registering yourself.
+You will be automatically logged in after registering.
+<br>
+>After Login
+<br>
+*Item list on the left side screen after logging in*
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+## 目標一覧
+[目標一覧] button will leads you to the page where you can see all the goals you have created.
+<br>
+> in the 目標一覧 page
+[詳細を見る] button will youu lead to detail page of the goal you selected.
+<br>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+## 目標を作成する
+Set your goal you wish to achieve
+simple and short sentence will be nice
+<br>
+ex. I will get a girlfriend!
+<br>
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## バケットリスト
+It's a bucket list.
+Create your own bucket list and try to achieve them all before RIP :)
+<br>
 
-## Laravel Sponsors
+## マイページ
+This is your page to see how many goals you have achieved and so on.
+You can also find the goals you are currently working on.
+[詳細を見る] button will youu lead to detail page of the goal you selected.
+<br>
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+>in detail of your goal page
+## タスクを作成する
+Create your own tasks!
+<br>
+1task = 1job!
+<br>
+Think smart and create your own tasks and getting them done so you can achieve your goal!
+<br>
+*Press [達成?] button for the task you accomplished and it will let you know what's done and not*
+<br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
 
-## Contributing
+# GROWER
+これは、あなたの目標達成をお手伝いするためのアプリケーションです。
+達成したい目標と達成のために必要なタスクを視覚化して、管理することができます。
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+<img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
+                                                                                                                              
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# バージョン 2019/5/24現在
+使用言語：　PHP: 7.0.28
+フレームワーク: 5.5.45
+パッケージ: Laravel Collective
 
-## License
+# 使用方法
+>ログイン前
+<br>
+## ユーザー登録
+まずはユーザーの新規登録をしましょう！
+登録が完了したら自動でログインされます。
+<br>
+>ログイン後
+<br>
+*画面左の項目一覧*
+## 目標を作成する
+まずは目標を設定しましょう。
+コツは簡単に一言で表現することです。
+<br>
+例）オリジナルアプリを作る！
+<br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## タスクを作成しましょう！
+１タスク = 1作業にしましょう！
+<br>
+全てのタスクをクリアすることで、自然と目標が達成されるように考えましょう。
+<br>
+あなたの計画力も鍛えることができます。
+<br>
+*終了したタスクは [達成?] ボタンをクリックして、マークしておきましょう！*
+<br>
+## 目標一覧を確認しましょう！
+[目標一覧]をクリックすると、これまで自分が立てた目標の一覧が確認できます。
+<br>
+## 目標の詳細ページ
+目標一覧から、[詳細を見る] ボタンをクリックし目標の進行状況を確認しましょう。
+<br>
+## バケットリスト
+バケットリストは死ぬまでにしたいことリストのことです。海外ではこれをバケットリストと呼びます。
+<br>
+あなたのしたいことを思いつく限り投稿して、時々振り返ってみましょう。
+<br>
+人間は意識をするとそれを実現する方へ自然と進んでいくものだそうです。
+
+
+
