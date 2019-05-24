@@ -16,7 +16,7 @@ class ClocksController extends Controller
 
         $now = new DateTime('now');
         $createdTime = new DateTime($target->created_at);
-        $passedTime = $createdTime->diff($now)->format('%h時間%i分%s秒');
+        $passedTime = $createdTime->diff($now)->format('%h時間%i分');
         
 
         return response()->json($passedTime);
@@ -31,11 +31,10 @@ class ClocksController extends Controller
         $date_time = $date . " " . $time;
         $dateTime = new DateTime($date_time);
         $now = new DateTime("now");
-        $diff = $now->diff($dateTime);
         
-        if ($diff == true) {
+        if ($dateTime > $now == true) {
             // 期限が現在よりも未来
-
+            $diff = $now->diff($dateTime);
             if($diff->y > 0){
                 $dueTime = $diff->format("%y年%mヶ月%d日");
             } elseif ($diff->m > 0) {
@@ -43,12 +42,13 @@ class ClocksController extends Controller
             } elseif ($diff->d > 0) {
                 $dueTime = $diff->format("%d日%h時間");
             } elseif ($diff->h > 0) {
-                $dueTime = $diff->format("%h時間%i分%s秒");
-            } elseif ($diff->i > 0) {
-                $dueTime = $diff->format("%i分%s秒");
+                $dueTime = $diff->format("%h時間%i分");
             } else {
-                $dueTime = $diff->format("%s秒");
+                $dueTime = $diff->format("%i分");
             }
+            // } else {
+            //     $dueTime = $diff->format("%s秒");
+            // }
             return response()->json($dueTime);
         } else{
             // 期限が現在よりも過去

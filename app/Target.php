@@ -31,7 +31,7 @@ class Target extends Model
         if ($dateTime > $now == true) {
             // 期限が現在よりも未来
             $diff = $now->diff($dateTime);
-            // 0年10ヶ月23日5分10秒
+
             if($diff->y > 0){
                 return $diff->format("%y年%mヶ月%d日");
             } elseif ($diff->m > 0) {
@@ -39,12 +39,13 @@ class Target extends Model
             } elseif ($diff->d > 0) {
                 return $diff->format("%d日%h時間");
             } elseif ($diff->h > 0) {
-                return $diff->format("%h時間%i分%s秒");
-            } elseif ($diff->i > 0) {
-                return $diff->format("%i分%s秒");
+                return $diff->format("%h時間%i分");
             } else {
-                return $diff->format("%s秒");
+                return $diff->format("%i分");
             }
+            // } else {
+            //     return $diff->format("%s秒");
+            // }
 
         } else{
             // 期限が現在よりも過去
@@ -55,7 +56,7 @@ class Target extends Model
     {
         $now = new DateTime('now');
         $createdTime = new DateTime($this->created_at);
-        $passedTime = $createdTime->diff($now)->format('%h時間%i分%s秒');
+        $passedTime = $createdTime->diff($now)->format('%h時間%i分');
         return $passedTime;
         
     }
