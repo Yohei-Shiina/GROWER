@@ -38,8 +38,8 @@ function dueTime(){
 $passedTime = document.getElementById('passedTime');
 $dueTime = document.getElementById('dueTime');
 if($passedTime){
-  setInterval('passedTime()', 1000);
+  setInterval('passedTime()', 60000);
 }
 if($dueTime){
-  setInterval('dueTime()', 1000);
+  setInterval('dueTime()', 60000);
 }
