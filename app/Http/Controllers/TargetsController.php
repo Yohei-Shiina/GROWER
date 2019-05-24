@@ -76,9 +76,6 @@ class TargetsController extends Controller
 
     public function update(Request $request, $id)
     {
-        if($request->goal == null){
-            return back();
-        }
         $target = Target::find($id);
 
         if (Input::get('achieve')){
