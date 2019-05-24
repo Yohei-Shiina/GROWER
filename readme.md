@@ -1,5 +1,5 @@
-You can access the app from the link below.<br>
-こちらのリンクからアプリにアクセスできます。<br>
+<strong>You can access the app from the link below.</strong<br>
+<strong>こちらのリンクからアプリにアクセスできます。</strong<br>
 URL: http://grower4u.herokuapp.com/ <br>
 
 Japanese below<br>
