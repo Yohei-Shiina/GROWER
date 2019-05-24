@@ -4,6 +4,7 @@
   font-size: 80px;
   text-align: center;
   margin: 30px auto 30px;
+  color: rgba(0, 0, 0, 0.747);
 }
 .welcome-page div {
   margin-bottom: 30px;
@@ -12,7 +13,11 @@
   text-align: center;
   line-height: 40px;
   margin-bottom: 30px;
-  font-size: 19px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.658);
+}
+.welcome-page p strong {
+  color: black;
 }
 .welcome-page p span {
   font-weight: bold;

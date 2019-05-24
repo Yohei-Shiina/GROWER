@@ -1,5 +1,4 @@
 .user-show{
-  
   .page{
     margin-top: 25px;
     margin-bottom: 30px;
@@ -10,31 +9,34 @@
     }
   }
   .user{
+    margin: 0;
     margin-bottom: 30px;
+    padding: 0 100px;
     .user-photo{
-      padding-left: 20px;
-      margin-bottom: 0;
+      padding-left: 0;
       img{
         display: block;
         height: 220px;
         width: 220px;
-        margin: 0 auto 20px;
+        margin-bottom: 20px;
       }
       input{
         display: block;
-        margin-left: 30%;
-      }
-      .btn{
 
       }
     }
-    .user-description p{
-      min-width: 200px;
-      margin-bottom: 30px;
+    .user-description {
+      padding: 0;
+      p{
+        min-width: 200px;
+        margin-bottom: 30px;
+      }
     }
   }
   
   .goals{
+    padding: 0 100px;
+
     h5{
       text-shadow: 1px 2px 2px rgb(206, 204, 204);
     }

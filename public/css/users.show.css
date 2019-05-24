@@ -8,25 +8,31 @@
   color: #696868;
 }
 .user-show .user {
+  margin: 0;
   margin-bottom: 30px;
+  padding: 0 100px;
 }
 .user-show .user .user-photo {
-  padding-left: 20px;
-  margin-bottom: 0;
+  padding-left: 0;
 }
 .user-show .user .user-photo img {
   display: block;
   height: 220px;
   width: 220px;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
 }
 .user-show .user .user-photo input {
   display: block;
-  margin-left: 30%;
+}
+.user-show .user .user-description {
+  padding: 0;
 }
 .user-show .user .user-description p {
   min-width: 200px;
   margin-bottom: 30px;
+}
+.user-show .goals {
+  padding: 0 100px;
 }
 .user-show .goals h5 {
   text-shadow: 1px 2px 2px #cecccc;

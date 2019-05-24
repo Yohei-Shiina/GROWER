@@ -5,7 +5,6 @@
 <div class="user-show">
   <h4 class="page">マイページ<span> あなたのページです。取り組み中の目標や達成数などが確認できるよ！</span></h4>
 
-{{--  --}}
 <div class="user row col-12">
   <div class="user-photo col-md-6 col-sm-12">
   <img src="{{ $image }}" alt=hoge">
@@ -20,16 +19,7 @@
     <p class="list-group-item shadow">目標の達成数　{{$user->targets()->where('status', true)->count()}}回</p>
     <p class="list-group-item shadow">やりたいことリスト　{{ $user->buckets()->count() }}個</p>
   </div>
-</div>
-
-{{--  --}}
-
-
-
-
-      
-      
-      
+</div>      
 
   <div class="goals">
     <h5>現在取り組んでいる目標</h5>

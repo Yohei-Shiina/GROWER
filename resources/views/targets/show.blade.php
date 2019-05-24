@@ -64,7 +64,7 @@
     <div class="form-group">
       <div class="row">
         <input type="hidden" value="{{$target->id}}" class="hidden">
-        <input placeholder="タスクを具体的に入力してください" class="input col-7 shadow" name="task" type="text">
+        <input placeholder="タスクを具体的に入力してください" class="input col-6 shadow" name="task" type="text">
         <input type="submit" class="btn btn-primary shadow" id="task-add" value="追加">
       </div>
     </div>
