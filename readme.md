@@ -1,15 +1,14 @@
-<strong>You can access the app from the link below.</strong><br>
+English below<br>
+
 <strong>こちらのリンクからアプリにアクセスできます。</strong><br>
-
-here are the email and password to login as TEST USER<br>
-以下のEメールアドレス、パスワードでテストユーザーとしてログインできます。<br>
-
-Email   : t@gmail.com <br>
-Password: 000000 <br>
 URL: http://grower4u.herokuapp.com/ <br>
 
-English below<br>
-英語は下です。<br>
+以下のEメールアドレス、パスワードでテストユーザーとしてログインできます。<br>
+Email   : t@gmail.com <br>
+Password: 000000 <br>
+
+
+
 
 # GROWER
 これは、あなたの目標達成をお手伝いするためのアプリケーションです。<br>
@@ -74,6 +73,7 @@ URL: http://grower4u.herokuapp.com/ <br>
 <strong>こちらのリンクからアプリにアクセスできます。</strong><br>
 URL: http://grower4u.herokuapp.com/ <br>
 
+
 # 最後に
 最後まで目を通していただきありがとうございました。
 
@@ -88,6 +88,13 @@ English from here.<br>
 This is an application to help you achieve your goals more.<br>
 
 Visualizing your goals and tasks will help you manage yourself.<br>
+
+<strong>You can access the app from the link below.</strong><br>
+URL: http://grower4u.herokuapp.com/ <br>
+
+Here are the email and password to login as TEST USER<br>
+Email   : t@gmail.com <br>
+Password: 000000 <br>
 
 <img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
 
