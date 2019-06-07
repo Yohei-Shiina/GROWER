@@ -1,9 +1,11 @@
 <strong>You can access the app from the link below.</strong><br>
 <strong>こちらのリンクからアプリにアクセスできます。</strong><br>
+
 here are the email and password to login as TEST USER<br>
 以下のEメールアドレス、パスワードでテストユーザーとしてログインできます。<br>
-Email   : t@gmail.com
-Password: 000000
+
+Email   : t@gmail.com <br>
+Password: 000000 <br>
 URL: http://grower4u.herokuapp.com/ <br>
 
 English below<br>
