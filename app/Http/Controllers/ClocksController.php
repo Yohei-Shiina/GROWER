@@ -10,21 +10,16 @@ use App\Target;
 class ClocksController extends Controller
 {
     // Ajax処理による経過時間表示
-    public function passedTime(Request $request)
-    {
+    public function passedTime(Request $request) {
         $target = Target::find($request->id);
-
         $now = new DateTime('now');
         $createdTime = new DateTime($target->created_at);
         $passedTime = $createdTime->diff($now)->format('%h時間%i分');
-        
-
         return response()->json($passedTime);
     }
 
     // Ajax処理による経過時間表示
-    public function dueTime(Request $request)
-    {
+    public function dueTime(Request $request) {
         $target = Target::find($request->id);
         $date = strval($target->date);
         $time = strval($target->time);
@@ -46,9 +41,6 @@ class ClocksController extends Controller
             } else {
                 $dueTime = $diff->format("%i分");
             }
-            // } else {
-            //     $dueTime = $diff->format("%s秒");
-            // }
             return response()->json($dueTime);
         } else{
             // 期限が現在よりも過去

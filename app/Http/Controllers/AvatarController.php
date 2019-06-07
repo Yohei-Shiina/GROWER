@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class AvatarController extends Controller
 {
-    public function upload(Request $request)
-    {
-        $user = Auth::user();
+    public function upload(Request $request) {
+        if($request->file('image') === null){
+            return back();
+        }
         $file = $request->file('image');
+        $user = Auth::user();
         $disk = Storage::disk('s3');
         
         // まだ画像がなければ
