@@ -1,30 +1,33 @@
-English below<br>
+# アプリ概要
+アプリ名：GROWER
 
-<strong>こちらのリンクからアプリにアクセスできます。</strong><br>
-URL: http://grower4u.herokuapp.com/ <br>
-
-以下のEメールアドレス、パスワードでテストユーザーとしてログインできます。<br>
-Email   : t@gmail.com <br>
-Password: 000000 <br>
-
-
-
-
-# GROWER
-これは、あなたの目標達成をお手伝いするためのアプリケーションです。<br>
-達成したい目標と達成のために必要なタスクを視覚化して、管理することができます。<br>
+目標とタスクを視覚化して、管理することができるToDoアプリです。<br>
 
 <strong>こちらのリンクからアプリにアクセスできます。</strong><br>
 URL: http://grower4u.herokuapp.com/ <br>
 
 <img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
 
-# アプリ作成のために利用したもの
-- PHP
-- Laravel
+# アプリ機能一覧
+## 目標関連(コア)
+- 一覧・詳細の表示
+- 投稿、編集、削除機能
+- 制限時間と経過時間表示機能
+## タスク関連（全て非同期通信）
+- 目標に紐づくタスクの投稿
+- 達成ボタン押下時、達成バッヂ表示
+- タスクの削除機能
+## バケットリスト
+- 削除機能と同機能
+# アプリ仕様技術一覧
+### 言語等
 - HTML
 - CSS
 - Bootstrap
+
+- PHP
+- Laravel
+
 - JavaScript
 - Jquery
 ### サーバー
@@ -36,6 +39,15 @@ URL: http://grower4u.herokuapp.com/ <br>
 使用言語：　PHP: 7.0.28<br>
 フレームワーク: 5.5.45<br>
 パッケージ: Laravel Collective<br>
+
+<strong>アプリURL</strong><br>
+URL: http://grower4u.herokuapp.com/ <br>
+
+以下のEメールアドレス、パスワードでテストユーザーとしてログインできます。<br>
+Email   : t@gmail.com <br>
+Password: 000000 <br>
+
+
 
 # 使用方法
 
@@ -75,70 +87,6 @@ URL: http://grower4u.herokuapp.com/ <br>
 
 
 # 最後に
-最後まで目を通していただきありがとうございました。
+最後まで目を通していただきありがとうございます。
 
-もし何かあれば、気軽にissueを立てていただけれればと思います。<br>
-
-English from here.<br>
-
-
-# GROWER
->This is my first app I made with PHP/Laravel
-
-This is an application to help you achieve your goals more.<br>
-
-Visualizing your goals and tasks will help you manage yourself.<br>
-
-<strong>You can access the app from the link below.</strong><br>
-URL: http://grower4u.herokuapp.com/ <br>
-
-Here are the email and password to login as TEST USER<br>
-Email   : t@gmail.com <br>
-Password: 000000 <br>
-
-<img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
-
-# What I used to make this application
-- PHP
-- Laravel
-- HTML
-- CSS
-- Bootstrap
-- JavaScript
-- Jquery
-### Server
-- Heroku
-### Other
-- AWS S3
-
-# Versions as of May 24, 2019
-Language： PHP 7.0.28<br>
-Framework: 5.5.45<br>
-package: Laravel Collective<br>
-
-# How to use this app
-### Simple explanation<br>
-
-1, Check the goals you have made in the page by pressing [目標一覧] button on the left side of the page opened after logging in.
-
-2, Set your own goal in the page where you can visit by pressing  [目標を作成する] button on the left side of your page .<br>
-
-3, Create tasks and get them done to achieve the goal you have set. You can monitor yourself and how much progress you have made!<br>
-
-4, Create your own bucket list in the page accessible from [バケットリスト] button on the left side of your page!<br>
-
-5, Clicking [マイページ] will lead you to your My-Page. you can set your profile picture and monitor your progress!<br>
-
-
-<strong>You can access the app from the link below.</strong><br>
-URL: http://grower4u.herokuapp.com/ <br>
-
-# Lastly
-Thank you for reading my GitHub project until here.<br>
-Please feel free to create issues if you have anything! I would very appreciate it<br>
-<br>
-<br>
-<br>
-<br>
-
-
+もし何かあれば、気軽にissue等を立てていただけれればと思います。<br>
