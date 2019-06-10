@@ -21,19 +21,11 @@ URL: http://grower4u.herokuapp.com/ <br>
 - 削除機能と同機能
 # アプリ仕様技術一覧
 ### 言語等
-- HTML
-- CSS
-- Bootstrap
-
-- PHP
-- Laravel
-
-- JavaScript
-- Jquery
-### サーバー
-- Heroku
-### その他
-- AWS S3
+- HTML / CSS / Bootstrap
+- PHP / Laravel
+- JavaScript / Jquery
+### サーバー / その他
+- Heroku / AWS S3
 
 # バージョン 2019/5/24現在
 使用言語：　PHP: 7.0.28<br>
