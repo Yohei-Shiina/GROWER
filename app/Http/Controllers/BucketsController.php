@@ -5,25 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Bucket;
 use Auth;
-use Illuminate\Support\Facades\Input;
 
 class BucketsController extends Controller
 {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
     
-    public function index()
-    {
+    public function index() {
         $buckets = Auth::user()->buckets()->get();
 
         return view('buckets.index')->with('buckets', $buckets);
     }
     
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $bucket = Bucket::create([
             "wish" => $request->wish,
             "status" => 0,
@@ -32,25 +28,14 @@ class BucketsController extends Controller
         return response()->json($bucket);
     }
 
-
-    public function update($id)
-    {
+    public function update($id) {
         $wish = Bucket::find($id);
-
-        if($wish->status == false){
-            $wish->update(array('status' => true));
-
-        }else{
-            $wish->update(array('status' => false));
-        }
+        ($wish->status) ? $wish->update(array('status' => true)) : $wish->update(array('status' => false));
         return response()->json();
-
     }
 
     public function destroy($id) {
         Bucket::destroy($id);
         return response()->json();
-
-        return back();
     }
 }

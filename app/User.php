@@ -27,16 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function targets()
-    {
+    public function targets() {
         return $this->hasMany(Target::class);
     }
-    public function buckets()
-    {
+    public function buckets() {
         return $this->hasMany(Bucket::class);
     }
-    public function avatar()
-    {
+    public function avatar() {
         return $this->hasOne(Avatar::class);
     }
 }

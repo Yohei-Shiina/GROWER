@@ -10,29 +10,27 @@ class Target extends Model
 
     protected $fillable = ['goal', 'date', 'time', 'user_id', 'status'];
 
-    public function tasks()
-    {
+    public function tasks() {
         return $this->hasMany(Task::class);
     }
 
-    public function user()
-    {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 
-    public function dueTime()
-    {
+    public function dueTime() {
         $date = strval($this->date);
         $time = strval($this->time);
         $date_time = $date . " " . $time;
         $dateTime = new DateTime($date_time);
         $now = new DateTime("now");
-        
-        if ($dateTime > $now == true) {
+        if ($dateTime > $now == false) {
+            // 期限が現在よりも過去
+            return "時間切れ";
+        } else {
             // 期限が現在よりも未来
             $diff = $now->diff($dateTime);
-
-            if($diff->y > 0){
+            if($diff->y > 0) {
                 return $diff->format("%y年%mヶ月%d日");
             } elseif ($diff->m > 0) {
                 return $diff->format("%mヶ月%d日");
@@ -43,21 +41,13 @@ class Target extends Model
             } else {
                 return $diff->format("%i分");
             }
-            // } else {
-            //     return $diff->format("%s秒");
-            // }
-
-        } else{
-            // 期限が現在よりも過去
-            return "時間切れ";
         }
     }
-    public function passedTime()
-    {
+    
+    public function passedTime() {
         $now = new DateTime('now');
         $createdTime = new DateTime($this->created_at);
         $passedTime = $createdTime->diff($now)->format('%h時間%i分');
         return $passedTime;
-        
     }
 }
