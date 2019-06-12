@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Bucket;
 use Auth;
-use Illuminate\Support\Facades\Input;
 
 class BucketsController extends Controller
 {
@@ -31,13 +30,7 @@ class BucketsController extends Controller
 
     public function update($id) {
         $wish = Bucket::find($id);
-
-        if($wish->status == false){
-            $wish->update(array('status' => true));
-
-        }else{
-            $wish->update(array('status' => false));
-        }
+        ($wish->status) ? $wish->update(array('status' => true)) : $wish->update(array('status' => false));
         return response()->json();
     }
 

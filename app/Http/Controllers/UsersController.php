@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
-use App\User;
 use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
@@ -19,29 +17,20 @@ class UsersController extends Controller
     }
 
     public function show($id) {   
-        if(User::find($id)){
-            $user = Auth::user();
-            // 不正アクセスの時
-            if ($id != $user->id) {
-                
-                return back();
-            // 正しいアクセスの時
-            } else {
-                $targets = $user->targets()->get();
-                $disk = Storage::disk('s3');
 
-                // 画像あれば
-                if($user->avatar){
-                    $image = $disk->url($user->avatar->image);
-                }
-                // 画像がなければ
-                else{
-                    $image = $disk->url("NoImage.png");
-                }
-                return view('users.show')->with(array('targets' => $targets, 'user' => $user, 'image'=> $image));
-            }
-        }else{
+        $user = Auth::user();
+        // 不正アクセスの時
+        if ($id != $user->id) {
             return back();
+
+        // 正しいアクセスの時
+        } else {
+            $targets = $user->targets()->get();
+            $disk = Storage::disk('s3');
+
+            // avatar     ?                画像ある場合                 ：      画像ない場合 $imageに代入
+            $user->avatar ? $image = $disk->url($user->avatar->image) : $image = $disk->url("NoImage.png");
+            return view('users.show')->with(array('targets' => $targets, 'user' => $user, 'image'=> $image));
         }
     }
 }

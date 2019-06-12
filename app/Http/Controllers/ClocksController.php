@@ -18,7 +18,7 @@ class ClocksController extends Controller
         return response()->json($passedTime);
     }
 
-    // Ajax処理による経過時間表示
+    // Ajax処理による制限時間表示
     public function dueTime(Request $request) {
         $target = Target::find($request->id);
         $date = strval($target->date);
@@ -27,10 +27,13 @@ class ClocksController extends Controller
         $dateTime = new DateTime($date_time);
         $now = new DateTime("now");
         
-        if ($dateTime > $now == true) {
+        if ($dateTime > $now == false) {
+            // 期限が現在よりも過去
+            return response()->json("時間切れ");
+        } else {
             // 期限が現在よりも未来
             $diff = $now->diff($dateTime);
-            if($diff->y > 0){
+            if($diff->y > 0) {
                 $dueTime = $diff->format("%y年%mヶ月%d日");
             } elseif ($diff->m > 0) {
                 $dueTime = $diff->format("%mヶ月%d日");
@@ -42,9 +45,6 @@ class ClocksController extends Controller
                 $dueTime = $diff->format("%i分");
             }
             return response()->json($dueTime);
-        } else{
-            // 期限が現在よりも過去
-            return response()->json("時間切れ");
         }
     }
 }
