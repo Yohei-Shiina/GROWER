@@ -1,12 +1,12 @@
 # アプリ概要
 アプリ名：GROWER
 
-目標とタスクを視覚化して、管理することができるToDoアプリです。<br>
+目標とタスクを視覚化して、管理することができる<strong>ToDoアプリ</strong>です。<br>
+<img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
 
 <strong>こちらのリンクからアプリにアクセスできます。</strong><br>
 URL: http://grower4u.herokuapp.com/ <br>
-
-<img src="https://raw.githubusercontent.com/Yohei-Shiina/GROWER/image_for_readme/Grower.png" alt="サンプル" width="874" height="433">
+※ <strong>初期値のまま</strong>テストユーザーとして<strong>ログイン</strong>ができます。<br>
 
 # アプリ機能一覧
 ## 目標関連(コア)
